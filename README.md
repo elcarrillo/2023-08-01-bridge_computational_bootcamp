@@ -1,6 +1,6 @@
 [![Main_Website](https://img.shields.io/badge/-Website-orange.svg)](https://vandyastroml.github.io/2018_08_02_Fall_Bridge_Computational_Bootcamp/)
 
-# 2018 - Fall Bridge COmputational Bootcamp
+# 2018 - Fall Bridge Computational Bootcamp
 
 __Author__: Victor Calderon
 
