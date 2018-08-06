@@ -7,8 +7,8 @@
 # https://medium.com/purple-rock-scissors/customizing-your-terminal-with-bash-a22852abc447
 
 ########################## --- LOADING MAIN BASHRC FILE ---- ##################
-if [[ -f /etc/bashrc ]]; then
-    . /etc/bashrc
+if [[ -f /etc/.bashrc ]]; then
+    . /etc/.bashrc
 fi
 
 ########################## --- BASH COMPLETION ---- ###########################
