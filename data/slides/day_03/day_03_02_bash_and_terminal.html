@@ -38,18 +38,173 @@
 			<div class="slides">
 <!--Intro-->
                 <section>
-                    <h2><font color="orange">Bash and <br>the Terminal</font></h2>
+                    <h2><font color="orange">Customizong your<br>Terminal</font></h2>
                 </section>
 <!--Why SSH?-->
                 <section>
-                    <h2>Why SSH?</h2>
-                    <ul>
-                        <li class="fragment"><font color="orange">You need to access a <em>remote</em> server</font></li>
-                        <li class="fragment">You need a file from a server</li>
-                        <li class="fragment"><font color="orange">There is no graphical interface to interact with</font></li>
-                    </ul>
-                    <p><br></p>
-                    <p class="fragment">You will be using SSH for your <font color="orange">research!</font></p>
+                    <section>
+                        <h2>Customizing your Terminal</h2>
+                        <ul>
+                            <li class="fragment"><font color="orange">bashrc</font> and <font color="orange">bash_profile</font></li>
+                            <li class="fragment">Modifying your prompt</li>
+                            <li class="fragment">Aliases</li>
+                            <li class="fragment">Environment variables</li>
+                            <li class="fragment">Paths</li>
+                        </ul>
+                        <p class="fragment">You should <font color="orange">customize</font> your shell according to your needs!</p>
+
+                    </section>
+                </section>
+<!--Bashrc and Bash_profile-->
+                <section>
+                    <section>
+                        <h2><font color="orange"><code>bashrc</code></font> and <font color="orange"><code>bash_profile</code></font></h2>
+                        <ul class="fragment">
+                            <li><font color="orange"><code>bashrc</code></font>: Initializes an <u>interactive session</u></li>
+                            <li><font color="orange"><code>bash_profile</code></font>: Executed once when starting shell</li>
+                        </ul>
+                        <p class="fragment">But most of the settings go in <font color="orange"><code>bashrc</code></font> file!</p>
+                        <p class="fragment" size="2">In Mac OSX, <font color="orange">both</font> files exist. In Linux, only <em>one</em> is used!</p>
+                    </section>
+                    <section>
+                        <h3><font color="orange"><code>bashrc</code></font> and <font color="orange"><code>bash_profile</code></font></h3>
+                        <p>A typical bashrc file looks like this: <br><a href="https://gist.github.com/giggio/1704664">https://gist.github.com/giggio/1704664</a></p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        # ~/.bashrc: executed by bash(1) for non-login shells.
+                        # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+                        # for examples
+
+                        # If not running interactively, don't do anything
+                        case $- in
+                            *i*) ;;
+                              *) return;;
+                        esac
+
+                        # don't put duplicate lines or lines starting with space in the history.
+                        # See bash(1) for more options
+                        HISTCONTROL=ignoreboth
+
+                        # append to the history file, don't overwrite it
+                        shopt -s histappend
+
+                        # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+                        HISTSIZE=1000
+                        HISTFILESIZE=2000
+
+                        # check the window size after each command and, if necessary,
+                        # update the values of LINES and COLUMNS.
+                        shopt -s checkwinsize
+
+                        # If set, the pattern "**" used in a pathname expansion context will
+                        # match all files and zero or more directories and subdirectories.
+                        #shopt -s globstar
+
+                        # make less more friendly for non-text input files, see lesspipe(1)
+                        [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+                        # set variable identifying the chroot you work in (used in the prompt below)
+                        if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+                            debian_chroot=$(cat /etc/debian_chroot)
+                        fi
+
+                        # set a fancy prompt (non-color, unless we know we "want" color)
+                        case "$TERM" in
+                            xterm-color) color_prompt=yes;;
+                        esac
+
+                        # uncomment for a colored prompt, if the terminal has the capability; turned
+                        # off by default to not distract the user: the focus in a terminal window
+                        # should be on the output of commands, not on the prompt
+                        #force_color_prompt=yes
+
+                        if [ -n "$force_color_prompt" ]; then
+                            if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+                            # We have color support; assume it's compliant with Ecma-48
+                            # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+                            # a case would tend to support setf rather than setaf.)
+                            color_prompt=yes
+                            else
+                            color_prompt=
+                            fi
+                        fi
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>You can use these files to customize how your shell session behaves, as well
+                            adding new <font color="orange">environment variables!</font>
+                        </h3>
+                    </section>
+                </section>
+<!--Starting your 'bashrc' file-->
+                <section>
+                    <section>
+                        <h3>Setting up your <code>SHELL</code> session</h3>
+                    </section>
+                </section>
+<!--Modifying your prompt-->
+                <section>
+                    <section>
+                        <h3>Modifying your prompt</h3>
+                        <ul>
+                            <li>Open the terminal and type: <code><font color="orange">nano ~/.bashrc</font></code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        parse_git_branch() {
+                            git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+                        }
+
+                        export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch)\[\033[00m\] "
+                        export CLICOLOR=1
+                        export LSCOLORS=ExFxBxDxCxegedabagacad
+                        alias ls='ls -GFh'
+                        </code></pre>
+                        <ul>
+                            <li>Hit <font color="orange">Control+O</font> to save, then <font color="orange">Control+X</font> to exit out of nano</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Modifying your prompt</h3>
+                        <ul>
+                            <li>This function extracts the current <font color="orange">git</font> branch.</li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        parse_git_branch() {
+                            git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+                        }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Modifying your prompt</h3>
+                        <ul>
+                            <li>Changes the bash prompt to be colorized, and rearranges the print to
+                            be <code><font color="orange">username@hostname:cwd $(git-branch)</font></code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch)\[\033[00m\] "
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Modifying your prompt</h3>
+                        <ul>
+                            <li>The next two lines enable command line colors, and define colors for the <code>'ls'</code> command</li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        export CLICOLOR=1
+                        export LSCOLORS=ExFxBxDxCxegedabagacad
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Modifying your prompt</h3>
+                        <ul>
+                            <li><code><font color="orange">-G</font></code>: Colorizes output</li>
+                            <li><code><font color="orange">-h</font></code>: Makes sizes human readable</li>
+                            <li><code><font color="orange">-F</font></code>: Throws a '/' after a directory, '*' after an executable, 
+                            and a '@' after a symlink</li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        alias ls='ls -GFh'
+                        </code></pre>
+                    </section>
                 </section>
 
 <!---->
