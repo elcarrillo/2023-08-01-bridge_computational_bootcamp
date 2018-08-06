@@ -146,7 +146,8 @@
                     <section>
                         <h3>Modifying your prompt</h3>
                         <ul>
-                            <li>Open the terminal and type: <code><font color="orange">nano ~/.bashrc</font></code></li>
+                            <li>Open the terminal and type: <code><font color="orange">nano ~/.bashrc</font></code>.
+                            (If it doesn't exist, create it with <code>touch</code>.)</li>
                         </ul>
                         <pre><code class="hljs" data-trim contenteditable>
                         parse_git_branch() {
@@ -205,8 +206,185 @@
                         alias ls='ls -GFh'
                         </code></pre>
                     </section>
+                    <section>
+                        <h3>Modifying your prompt</h3>
+                        <p>You can also modify the aspect of <br>your <font color="orange">command prompt</font></p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        username@hostname:/path/to/working/directory (git-status)
+                        </code></pre>
+                        <p class="fragment">You can add this to <font color="orange">bashrc</font> file!</p>
+                    </section>
+                    <section>
+                        <h3>Modifying your prompt</h3>
+                        <a href="https://github.com/VandyAstroML/2018_08_02_Fall_Bridge_Computational_Bootcamp/tree/master" target="_blank">2018 - Fall Bridge Computational Bootcamp<br>Repository</a>
+                        <p>Under <a href="https://github.com/VandyAstroML/2018_08_02_Fall_Bridge_Computational_Bootcamp/tree/master/data/day_03/dot_files" target="_blank"><u><code>data >> day_03 >> dot_files</code></u></a></p>
+                        <p class="fragment">These are a set of sample <em>dot</em> files that you can add to your main directory.</p>
+                    </section>
+                    <section>
+                        <h3><font color="orange">We'll come back to this shortly!</font></h3>
+                    </section>
                 </section>
-
+<!--Aliases-->
+                <section>
+                    <section>
+                        <h3>Aliases</h3>
+                        <ul>
+                            <li class="fragment">Keyboard <font color="orange">shortcuts</font>!</li>
+                            <li class="fragment">For <em>simple</em> and <em>complex</em> commands</li>
+                            <li class="fragment">Temporary or <em>permanent</em></li>
+                            <li class="fragment">Used to navigate your terminal</li>
+                            <li class="fragment">etc.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Aliases</h3>
+                        <p>I like to save my aliases in <br><code><font color="orange">~/.aliases</font></code></p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        ############################## --- GENERAL --- ################################
+                        alias   lll='ls -lah'
+                        alias   LLL=lll
+                        alias   lla=lll
+                        alias   llh='ls -lh'
+                        alias   llt='ls -lahtr'
+                        alias    LS='ls'
+                        alias    sl='ls'
+                        </code></pre>
+                        <p class="fragment">... and many more</p>
+                    </section>
+                    <section>
+                        <h3>Creating aliases</h3>
+                    </section>
+                    <section>
+                        <h3>Creating aliases</h3>
+                        <p>If you want a <font color="yellow">temporary</font> alias, type</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        alias name_of_alias="command"
+                        </code></pre>
+                        <p>For example:</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        alias ll="ls -al"
+                        </code></pre>
+                        <p class="fragment">Now whenever you type <font color="orange"><code>ll</code></font>, the system will understand it as <font color="orange"><code>ls -la</code></font></p>
+                    </section>
+                    <section>
+                        <h3>Creating aliases</h3>
+                        <p>If you want a <font color="orange">permanent</font> alias, you need to modify your <font color="orange"><code>~/.bashrc</code></font> file</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        ## Example of other aliases
+                        alias pushd='cd -'
+                        alias    CD='cd'
+                        alias tree='tree -C'
+                        alias crone='crontab -e'
+                        alias cronl='crontab -l'
+                        alias     jb='jupyter notebook'
+                        </code></pre>
+                        <p>This
+                            <u><a href="https://raw.githubusercontent.com/VandyAstroML/2018_08_02_Fall_Bridge_Computational_Bootcamp/master/data/day_03/dot_files/.aliases" target="_blank">file</a></u>
+                            is a compilation of <em>useful</em> aliases for your terminal!
+                        </p>
+                        <p class="fragment">(See the <font color="orange">repository</font>)</p>
+                    </section>
+                    <section>
+                        <h3>Removing aliases</h3>
+                        <p>If you want to <u><b>remove</b></u> an alias, type:</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        unalias command_name
+                        </code></pre>
+                        <p class="fragment">This will <em>remove</em> the alias from the <u><em><font color="orange">current</font></em></u> session!</p>
+                        <p class="fragment">For example:</p>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        # This will remove the 'crone' alias
+                        unalias crone
+                        </code></pre>
+                        <p class="fragment">If you want remove a <font color="yellow">permanent</font> alias, you will need to edit your <font color="orange">~/.aliases</font> file!</p>
+                    </section>
+                    <section>
+                        <h3>Aliases</h3>
+                        <p>Whenever you modify your <font color="orange">~/.aliases</font> file, you need to source it <u>again:</u></p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        source ~/.aliases
+                        </code></pre>
+                        <p class="fragment">This will <em>update</em> the aliases in your <u><font color="orange">current</font></u> session</p>
+                    </section>
+                    <section data-background="#900000 ">
+                        <h3>Exercise</h3>
+                        <ul>
+                            <li>Create a <u>temporary</u> alias for <font color="orange"><br>"<code>ping www.google.com</code>"</font></li>
+                            <li>Add the aliases from the <font color="orange"><code>.aliases</code></font> file from the repository to your <em>local</em> version</li>
+                            <ul>
+                                <li>Go to <a href="https://tinyurl.com/bcb18-repo" target="_blank">https://tinyurl.com/bcb18-repo</a></li>
+                                <li>Make sure you're in the "<code>master</code>" branch</li>
+                                <li>Copy the aliases in the <code>.aliases</code> file to your <code>.aliases</code> file in <font color="orange"><code>$HOME</code></font> directory.</li>
+                            </ul>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Aliases</h2>
+                        <p>For more info on <font color="yellow">aliases</font> and how to use them, <br>see:</p>
+                        <a href="https://jonsuh.com/blog/bash-command-line-shortcuts/" target="_blank">https://jonsuh.com/blog/bash-command-line-shortcuts/</a>
+                    </section>
+                </section>
+<!--Environment variables-->
+                <section>
+                    <section>
+                        <h2>Environment variables</h2>
+                    </section>
+                    <section>
+                        <h3>Environment variables</h3>
+                        <ul>
+                            <li class="fragment">When the <font color="orange">shell session</font> starts, the system compiles info that should be available to the <font color="orange">shell</font> session.</li>
+                            <li class="fragment"><font color="orange">Key</font>-<font color="yellow">value</font> pairs</li>
+                            <li class="fragment"><font color="orange">Temporary</font> or <font color="yellow">permanent</font></li>
+                        </ul>
+                        <p class="fragment">Typically, environment variables look like:</p>
+                        <pre class="fragment"><font size=20><code class="hljs" data-trim contenteditable>
+                        KEY="value with spaces"
+                        </code></font></pre>
+                        <p class="fragment">or</p>
+                        <pre class="fragment"><font size=20><code class="hljs" data-trim contenteditable>
+                        KEY=value1:value2:...
+                        </code></font></pre>
+                    </section>
+                    <section>
+                        <h3>Creating environment variables</h3>
+                        <p>Creating a variable named <font color="orange"><code>TEST_VAR</code></font></p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        TEST_VAR='Hello World!'
+                        </code></pre>
+                        <p class="fragment">And you can access it by:</p>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        echo $TEST_VAR
+                        </code></pre>
+                        <p class="fragment">Now you need to <u>export</u> the variable</p>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        export TEST_VAR
+                        </code></pre>
+                        <p class="fragment">This will ensure that your variable <font color="orange"><code>TEST_VAR</code></font><br>is available!</p>
+                    </section>
+                    <section>
+                        <h3>Using environment variables</h3>
+                        <p>You can set environment variables in your current shell, or you can make them <u><font color="orange">permanent</font></u></p>
+                        <p>You can do this adding them to your <font color="orange"><code>~/.bashrc</code></font> file</p>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        ## .bashrc file
+                        ...
+                        # Defining environment variable TEST_VAR
+                        TEST_VAR='Hello World!'
+                        export TEST_VAR
+                        ...
+                        </code></pre>
+                        <p class="fragment">and type this in the terminal</p>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        source ~/.bashrc
+                        </code></pre>
+                        <p class="fragment">This will <code>source</code> the new <font color="orange">environment variables</font>!</p>
+                    </section>
+                    <section>
+                        <h2>Environment Variables</h2>
+                        <p>For more information on <font color="yellow">environment variables</font>, <br> see:</p>
+                        <a href="https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps#setting-shell-and-environmental-variables" target="_blank">https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps#setting-shell-and-environmental-variables</a>
+                    </section>
+                </section>
 <!---->
 <!---->
 
