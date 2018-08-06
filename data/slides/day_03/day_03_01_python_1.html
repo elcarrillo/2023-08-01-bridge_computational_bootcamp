@@ -36,13 +36,670 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-                <section data-markdown>
-                    <textarea data-template>
-                        ## Bridge Computational Bootcamp
-                        
-                        Fall 2018
-                    </textarea>
+<!--Intro-->
+                <section>
+                    <h2><font color="orange">Python</font> <br><font color="yellow">What you should know about it!</font></h2>
                 </section>
+<!--What is Python-->
+                <section>
+                    <section>
+                        <h2>What is Python?</h2>
+                        <ul>
+                            <li class="fragment"><font color="orange">Interpreted</font>: Do not need to compile your program before executing</li>
+                            <li class="fragment"><font color="orange">Interactive</font>: Can sit at a prompt and interact with the interpreter directly</li>
+                            <li class="fragment"><font color="orange">Object-Oriented</font>: Style of programming that encapsulates code within objects</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>About Python</h2>
+                        <ul>
+                            <li>Developed by Guido van Rossum in 1989</li>
+                            <li>It is <font color="orange"><b>FREE</b></font>!!</li>
+                            <li>Designed to be fun to use and <font color="yellow"><b>easy</b></font> to learn</li>
+                            <li>Named after <code>Monty Python's Flying Circus</code></li>
+                        </ul>
+                        <img class="fragment" src="./images/image_03_01_python_monty.jpg" alt="monty_python" height="500">
+                    </section>
+                </section>
+<!--Installing Python and Anaconda-->
+                <section>
+                    <section>
+                        <h2>Installing Python</h2>
+                    </section>
+                    <section>
+                        <h3>Installing Python</h3>
+                        <p>The best way (in my opinion) to install Python is through <font color="orange">Anaconda</font></p>
+                        <h4><a href="https://www.anaconda.com/download/#macos" target="_blank">https://www.anaconda.com/download/#macos</a></h4>
+                        <img src="./images/image_03_02_anaconda_log.png" alt="anaconda_logo">
+                    </section>
+                    <section>
+                        <h3>Installing Python</h3>
+                        <ol>
+                            <li>Go to <a href="https://www.anaconda.com/download/#macos" target="_blank">https://www.anaconda.com/download/#macos</a></li>
+                            <li>Download the corresponding installation file for <font color="yellow"><b>Python 3.6</b></font></li>
+                            <li>Read the documentation in "<a href="https://docs.anaconda.com/anaconda/install/">How to Install ANACONDA</a>" and follow instructions</li>
+                            <li>For command-line, use:
+                            <pre><code class="hljs" data-trim contenteditable>
+                            bash /path/to/file/Anaconda3-5.2.0-Linux-x86_64.sh
+                            </code></pre>
+                            </li>
+                            <li>And now follow the instructions.</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h3>Installing Python</h3>
+                        <p>Once you've installed Python correctly, you shold be able to</p>
+                        <ul>
+                            <li>Open up the Terminal app</li>
+                            <li>Type <code><font color="orange">ipython</font></code></li>
+                            <li>And begin with an interactive Python session</li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        victor2@Victors-MBP-3:~ ipython
+                        Python 3.6.4 |Anaconda custom (64-bit)| (default, Jan 16 2018, 12:04:33)
+                        Type 'copyright', 'credits' or 'license' for more information
+                        IPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.
+
+                        In [1]:
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Installing Python</h3>
+                        <p><font size="6">For more information on how to install Python<br> see:</font></p>
+                        <a href="https://vanderbilt-astro-starting-grad-school.readthedocs.io/en/latest/python_intro.html#installing-anaconda" target="_blank">https://vanderbilt-astro-starting-grad-school.readthedocs.io/en/latest/python_intro.html#installing-anaconda</a>
+                    </section>
+                </section>
+<!--Interactive Session-->
+                <section>
+                    <section>
+                        <h3>Interactive Session</h3>
+                        <ul>
+                            <li>To begin an <font color="orange">interactive</font> Python session, type <code>python</code> or <code>ipython</code>on the command line:</li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        victor2@Victors-MBP-3:~ ipython
+                        Python 3.6.4 |Anaconda custom (64-bit)| (default, Jan 16 2018, 12:04:33)
+                        Type 'copyright', 'credits' or 'license' for more information
+                        IPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.
+
+                        In [1]:
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Interactive Session</h3>
+                        <ul>
+                            <li>To exit an interactive Python session, type: <code>Ctrl-d, exit()</code> or <code>quit()</code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        victor2@Victors-MBP-3:~ ipython
+                        Python 3.6.4 |Anaconda custom (64-bit)| (default, Jan 16 2018, 12:04:33)
+                        Type 'copyright', 'credits' or 'license' for more information
+                        IPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.
+
+                        In [1]: exit
+                        victor2@Victors-MBP-3:~
+                        </code></pre>
+                    </section>
+                </section>
+<!--Variable Assignment-->
+                <section>
+                    <section>
+                        <h3>Assignment</h3>
+                        <ul>
+                            <li>You can assing values to <font color="orange">variables</font> with</li>
+                            <pre><code class="hljs" data-trim contenteditable>
+                            &lt;var&gt; = &lt;expression&gt;
+                            </code></pre>
+                            <li>For example:</li>
+                            <pre><code class="hljs" data-trim contenteditable>
+                            victor2@Victors-MBP-3:~ ipython
+                            nuPython 3.6.4 |Anaconda custom (64-bit)| (default, Jan 16 2018, 12:04:33)
+                            Type 'copyright', 'credits' or 'license' for more information
+                            IPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.
+
+                            In [1]: number = 5
+
+                            In [2]: number
+                            Out[2]: 5
+                            </code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Assignment</h3>
+                        <ul>
+                            <li>Variables can be reassigned. Python will retain the <u>most recent</u> assignment.</li>
+                            <li>For example: <font color="orange">swap values of <code>x</code> and <code>y</code></font></li>
+                            <pre><code class="hljs" data-trim contenteditable>
+                            In [1]: x = 5
+                            In [2]: x
+                            Out[2]: 5
+
+                            In [3]: y = 12
+                            In [4]: y
+                            Out[4]: 12
+
+                            In [5]: x = y
+                            In [6]: y = x
+
+                            In [7]: x, y
+                            Out[7]: (12, 12)
+                            </code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Assignment</h3>
+                        <ul>
+                            <li>Variables can be reassigned. Python will retain the <u>most recent</u> assignment.</li>
+                            <li>For example: <font color="orange">swap values of <code>x</code> and <code>y</code></font></li>
+                            <pre><code class="hljs" data-trim contenteditable>
+                            In [1]: x = 5
+                            In [2]: x
+                            Out[2]: 5
+
+                            In [3]: y = 12
+                            In [4]: y
+                            Out[4]: 12
+
+                            In [5]: temp = x
+                            In [6]: x = y
+                            In [7]: y = temp
+
+                            In [8]: x, y
+                            Out[7]: (12, 5)
+                            </code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Multiple assignment</h3>
+                        <ul>
+                            <li>You can assing values to <font color="orange">multiple variables</font> with</li>
+                            <pre><code class="hljs" data-trim contenteditable>
+                            &lt;var1&gt;, &lt;var2&gt;, ... = &lt;expr1&gt;, &lt;expr2&gt;, ...
+                            </code></pre>
+                            
+                            <li>For example:</li>
+                            <pre><code class="hljs" data-trim contenteditable>
+                            In [1]: x, y = 5, 12
+
+                            In [2]: x
+                            Out[2]: 5
+
+                            In [3]: y
+                            Out[3]: 12
+                            </code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Multiple Assignment</h3>
+                        <ul>
+                            <li>Variables can be reassigned. Python will retain the <u>most recent</u> assignment.</li>
+                            <li>For example: <font color="orange">swap values of <code>x</code> and <code>y</code></font></li>
+                            <pre><code class="hljs" data-trim contenteditable>
+                            In [1]: x, y = 5, 12
+
+                            In [2]: x, y = y, x
+
+                            In [3]: x,y
+                            Out[3]: (12, 5)
+                            </code></pre>
+                        </ul>
+                    </section>
+                </section>
+<!--Input/Output-->
+                <section>
+                    <section>
+                        <h3>Input &amp; Output</h3>
+                        <ul>
+                            <li>Ask for input from command-line with <code><font color="orange">input</font></code>:</li>
+                            <pre><code class="hljs" data-trim contenteditable>
+                            In [1]: name = input("What is your name?")
+                            What is your name?"Victor"
+
+                            In [2]: print("Hello", name)
+                            Hello "Victor"
+                            </code></pre>
+                        <li>Or you can also use <code><font color="orange">raw_input</font></code></li>
+                            <pre><code class="hljs" data-trim contenteditable>
+                            In [1]: name = raw_input("What is your name?")
+                            What is your name?"Victor"
+
+                            In [2]: print("Hello", name)
+                            Hello "Victor"
+                            </code></pre>
+                        </ul>
+                    </section>
+                </section>
+<!--Operators-->
+                <section>
+                    <section>
+                        <h3>Operators</h3>
+                        <div class="col-md-6">
+                            <h4>Mathematical</h4>
+                            <table class="table">
+                                <tr> <td><font color="orange">+</font></td>  <td>Additon</td> </tr>
+                                <tr> <td><font color="orange">-</font></td>  <td>Subtraction</td> </tr>
+                                <tr> <td><font color="orange">*</font></td>  <td>Multiplicaiton</td> </tr>
+                                <tr> <td><font color="orange">/</font></td>  <td>Divison</td> </tr>
+                                <tr> <td><font color="orange">**</font></td>  <td>Exponents</td> </tr>
+                                <tr> <td><font color="orange">%</font></td>  <td>Remainder</td> </tr>
+                                <tr> <td><font color="orange">abs()</font></td>  <td>Absolute value</td> </tr>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Operators</h3>
+                        <div class="col-md-6">
+                            <h4>Relational</h4>
+                            <table class="table">
+                                <tr> <td><font color="orange">==</font></td>  <td>Additon</td> </tr>
+                                <tr> <td><font color="orange">!=</font></td>  <td>Subtraction</td> </tr>
+                                <tr> <td><font color="orange">&gt;</font></td>  <td>Multiplicaiton</td> </tr>
+                                <tr> <td><font color="orange">&lt;</font></td>  <td>Divison</td> </tr>
+                                <tr> <td><font color="orange">&ge;</font></td>  <td>Exponents</td> </tr>
+                                <tr> <td><font color="orange">&le;</font></td>  <td>Remainder</td> </tr>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Operators</h3>
+                        <div class="col-md-6">
+                            <h4>Logical</h4>
+                            <table class="table">
+                                <tr> <td><font color="orange">and</font></td>  <td>Logical 'and'</td> </tr>
+                                <tr> <td><font color="orange">or</font></td>  <td>Logical 'or'</td> </tr>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Operators</h3>
+                        <p>Examples</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: 2 + 2 * 3
+                        Out[1]: 8
+
+                        In [2]: (2 + 2) * 3
+                        Out[2]: 12
+
+                        In [3]: 3.1415 * 2
+                        Out[3]: 6.283
+
+                        In [4]: 5/2
+                        Out[4]: 2.5
+
+                        In [5]: 2^100
+                        Out[5]: 102
+                        </code></pre>
+                    </section>
+                </section>
+<!--Data Types-->
+                <section>
+                    <section>
+                        <h2>Data Types</h2>
+                    </section>
+<!--                    Data Type - Strings-->
+                    <section>
+                        <h3>Data Types - <font color="orange">String</font></h3>
+                        <ul>
+                            <li>Immutable sequence of characters</li>
+                            <li>Examples: <code><font color="yellow">Spam</font></code>, <code><font color="yellow">eggs</font></code>, and <code><font color="yellow">spam and eggs</font></code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: S = "Spam"
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">String</font></h3>
+                        <ul>
+                            <li>To get the length f a string, use: <code><font color="yellow">len(string_name)</font></code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: S = "Spam"
+
+                        In [2]: len(S)
+                        Out[2]: 4
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">String</font></h3>
+                        <ul>
+                            <li><font color="orange">Indexing</font>: items are ordered left-to-right, beginning with <font color="yellow">0</font></li>
+                            <li><code><font color="yellow">string_name[index]</font></code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: S = "Spam"
+
+                        In [2]: len(S)
+                        Out[2]: 4
+                        
+                        In [3]: S[0]
+                        Out[3]: 'S'
+
+                        In [4]: S[2]
+                        Out[4]: 'a'
+
+                        In [5]: S[-1]
+                        Out[5]: 'm'
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">String</font></h3>
+                        <ul>
+                            <li><font color="orange">Slicing</font>: Extracts whole sections</li>
+                            <li><code><font color="yellow">string_name[begin:end]</font></code></li>
+                        </ul>
+                        <p>Try: <font color="orange">S[1:3]</font></p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: S = "Spam"
+
+                        In [2]: len(S)
+                        Out[2]: 4
+                        
+                        In [3]: S[1:3]
+                        Out[3]: 'pa'
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">String</font></h3>
+                        <ul>
+                            <li><font color="orange">Concatenation</font>: join two string with "<code>+</code>"</li>
+                            <li><font color="orange">Repetition</font>: repeat a string with "<code>*</code>"</li>
+                        </ul>
+                        <p>Try: <font color="orange">S[1:3]</font></p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: S = "Spam"
+
+                        In [2]: len(S)
+                        Out[2]: 4
+
+                        In [3]: S + 'Eggs'
+                        Out[3]: 'SpamEggs'
+
+                        In [4]: S * 4
+                        Out[4]: 'SpamSpamSpamSpam'
+                        </code></pre>
+                    </section>
+<!--                    Data Type - Lists-->
+                    <section>
+                        <h3>Data Types - <font color="orange">Lists</font></h3>
+                        <ul>
+                            <li><font color="orange">Indexing and slicing</font> - Just like strings </li>
+                            <li>Try: <font color="orange"><code>L[1]</code></font> and <font color="orange"><code>L[0:-1]</code></font></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: L = [1, 'spam', 4.0, 'U']
+
+                        In [2]: L
+                        Out[2]: [1, 'spam', 4.0, 'U']
+
+                        In [3]: L[1]
+                        Out[3]: 'spam'
+
+                        In [4]: L[0:-1]
+                        Out[4]: [1, 'spam', 4.0]
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">Lists</font></h3>
+                        <ul>
+                            <li>Can <font color="orange">grow</font> and <font color="orange">shrink</font> on command</li>
+                            <li>Try: <font color="orange"><code>L.append('eggs')</code></font> and <font color="orange"><code>L[3]</code></font></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: L = [1, 'spam', 4.0, 'U']
+
+                        In [2]: L
+                        Out[2]: [1, 'spam', 4.0, 'U']
+
+                        In [5]: L.append('eggs')
+
+                        In [6]: L
+                        Out[6]: [1, 'spam', 4.0, 'U', 'eggs']
+
+                        In [7]: del L[3]
+
+                        In [8]: L
+                        Out[8]: [1, 'spam', 4.0, 'eggs']
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">Lists</font></h3>
+                        <ul>
+                            <li>Can create multidimensional lists</li>
+                            <li>Start with an <font color="orange">empty</font> list</li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: M = []
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">Lists</font></h3>
+                        <ul>
+                            <li>Can create multidimensional lists</li>
+                            <li>Add a new list: <font color="orange"><code>[1, 2, 3]</code></font></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: M = []
+
+                        In [2]: M.append([1, 2, 3])
+
+                        In [3]: M
+                        Out[3]: [[1, 2, 3]]
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">Lists</font></h3>
+                        <ul>
+                            <li>Can create multidimensional lists</li>
+                            <li>Add another list: <font color="orange"><code>[4, 5, 6]</code></font></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: M = []
+
+                        In [2]: M.append([1,2,3])
+
+                        In [3]: M
+                        Out[3]: [[1, 2, 3]]
+
+                        In [4]: M.append([4, 5, 6])
+
+                        In [5]: M
+                        Out[5]: [[1, 2, 3], [4, 5, 6]]
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">Lists</font></h3>
+                        <ul>
+                            <li>Can create multidimensional lists</li>
+                            <li>Index the list. Try extracting the <font color="yellow">3</font></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: M = []
+
+                        In [2]: M.append([1,2,3])
+
+                        In [3]: M
+                        Out[3]: [[1, 2, 3]]
+
+                        In [4]: M.append([4, 5, 6])
+
+                        In [5]: M
+                        Out[5]: [[1, 2, 3], [4, 5, 6]]
+
+                        In [6]: M[0][2]
+                        Out[6]: 3
+                        
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">Lists</font></h3>
+                        <ul>
+                            <li>Lists are <font color="orange">dynamic</font> and <font color="orange">heterogeneous.</font></li>
+                            <li>Don't need to allocate space, and can <font color='orange'>mix</font> types!</li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: A = []
+                        In [2]: A.append([1, 2, 3])
+
+                        In [3]: A
+                        Out[3]: [[1, 2, 3]]
+
+                        In [4]: A.append(['spam', 'eggs'])
+
+                        In [5]: A
+                        Out[5]: [[1, 2, 3], ['spam', 'eggs']]
+
+                        In [6]: A.append([4.0, 'spam', [1, 2, 'string'], 5])
+
+                        In [7]: A
+                        Out[7]: [[1, 2, 3], ['spam', 'eggs'], [4.0, 'spam', [1, 2, 'string'], 5]]
+                        
+                        </code></pre>
+                    </section>
+<!--                    Data Types - Tuples-->
+                    <section>
+                        <h3>Data Types - <font color="orange">Tuples</font></h3>
+                        <ul>
+                            <li>Like lists, but immutable!</li>
+                            <li>Example: <code><font color="orange">(1, 'spam', 4.0, 'U')</font></code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: T = (1, 'spam', 4.0, 'U')
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">Tuples</font></h3>
+                        <ul>
+                            <li>Length, concatenation, Indexing</li>
+                            <li>Try: <code><font color="orange">len(T); T + (5,6); T[1]</font></code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: T = (1, 'spam', 4.0, 'U')
+
+                        In [2]: len(T)
+                        Out[2]: 4
+
+                        In [3]: T + (5,6)
+                        Out[3]: (1, 'spam', 4.0, 'U', 5, 6)
+
+                        In [4]: T[1]
+                        Out[4]: 'spam'
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">Tuples</font></h3>
+                        <ul>
+                            <li>Change or remove elements</li>
+                            <li>Try: <code><font color="orange">del T[2]</font></code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: T = (1, 'spam', 4.0, 'U')
+                        In [2]: len(T)
+                        Out[2]: 4
+
+                        In [3]: T + (5,6)
+                        Out[3]: (1, 'spam', 4.0, 'U', 5, 6)
+
+                        In [4]: T[1]
+                        Out[4]: 'spam'
+                        
+                        In [5]: del T[2]
+                        ---------------------------------------------------------------------------
+                        TypeError                                 Traceback (most recent call last)
+                        &lt;ipython-input-5-9678804ef101> in &lt;module&gt;()
+                        ----> 1 del T[2]
+                        TypeError: 'tuple' object doesn't support item deletion
+                        </code></pre>
+                    </section>
+<!--                    Data Types - Dictionaries-->
+                    <section>
+                        <h3>Data Types - <font color="orange">Dictionaries</font></h3>
+                        <ul>
+                            <li>Mutable key-value pairs</li>
+                            <li>Example: <code><font color="orange">{'food': 'spam, 'color': 'pink', 'quantity': 4}</font></code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: D = {'food': 'spam', 'color': 'pink', 'quantity': 4}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">Dictionaries</font></h3>
+                        <ul>
+                            <li>Index with keyword</li>
+                            <li>Try: <code><font color="orange">D['food']</font></code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: D = {'food': 'spam', 'color': 'pink', 'quantity': 4}
+
+                        In [2]: D['food']
+                        Out[2]: 'spam'
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Data Types - <font color="orange">Dictionaries</font></h3>
+                        <ul>
+                            <li>Change values</li>
+                            <li>Try: <code><font color="orange">D['quantity'] += 1</font></code></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: D = {'food': 'spam', 'color': 'pink', 'quantity': 4}
+
+                        In [2]: D['food']
+                        Out[2]: 'spam'
+
+                        In [3]: D['quantity'] += 1
+
+                        In [4]: D
+                        Out[4]: {'color': 'pink', 'food': 'spam', 'quantity': 5}
+                        </code></pre>
+                    </section>
+                </section>
+<!--Conditional Statements-->
+                <section>
+                    <section>
+                        <h3>Conditional Statements</h3>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        if conditon_1
+                            do something
+                        elif conditon_2:
+                            do something else
+                        else:
+                            do thing number 3
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Example of a script</h3>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        >>> spam = raw_input(“2 letter word for (and rhymes with) you & me: “) >>> guido = [spam, ‘eggs’]
+                        
+                        >>> if guido[1] == ‘eggs’:
+                                guido[1] = ‘are the’ >>> x = guido
+                        
+                        >>> sausage = raw_input(“Like a time of day, but begins with ‘k’: “)
+                        >>> y = sausage + ‘s’
+                        
+                        >>> bacon = raw_input(“Fill in the blank in this children’s game: Simon ____: “) >>> z = [‘who’, bacon[0:-1]]
+                        
+                        >>> print( x, y, z, “Ni!”)
+                        </code></pre>
+                    </section>
+                </section>
+<!--Back to Main website-->
+                <section>
+                    <p>Back to main website:</p>
+                    <h3><a href="https://tinyurl.com/bcb18" target="_blank">https://tinyurl.com/bcb18</a></h3>
+                </section>
+<!---->
+<!---->
+
+<!---->
+<!---->
+
+                
+<!---->
+<!---->
+
+<!---->
+<!---->
 			</div>
 		</div>
 
@@ -90,6 +747,7 @@
 <div id="hidden" style="display:none;">
     <div id="header">
         <div id="header-left">Bridge Computational Bootcamp</div>
+        <div id="header-right">Day 03</div>
         <div id="footer-left">Victor Calderon (2018)</div>
     </div>
 </div>
