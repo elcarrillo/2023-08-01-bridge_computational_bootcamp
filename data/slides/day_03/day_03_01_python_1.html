@@ -258,14 +258,7 @@
                             In [2]: print("Hello", name)
                             Hello "Victor"
                             </code></pre>
-                        <li>Or you can also use <code><font color="orange">raw_input</font></code></li>
-                            <pre><code class="hljs" data-trim contenteditable>
-                            In [1]: name = raw_input("What is your name?")
-                            What is your name?"Victor"
-
-                            In [2]: print("Hello", name)
-                            Hello "Victor"
-                            </code></pre>
+                            <li>The user gets asked for the input and then gets assigned to <font color="orange"><code>name.</code></font></li>
                         </ul>
                     </section>
                 </section>
@@ -291,12 +284,12 @@
                         <div class="col-md-6">
                             <h4>Relational</h4>
                             <table class="table">
-                                <tr> <td><font color="orange">==</font></td>  <td>Additon</td> </tr>
-                                <tr> <td><font color="orange">!=</font></td>  <td>Subtraction</td> </tr>
-                                <tr> <td><font color="orange">&gt;</font></td>  <td>Multiplicaiton</td> </tr>
-                                <tr> <td><font color="orange">&lt;</font></td>  <td>Divison</td> </tr>
-                                <tr> <td><font color="orange">&ge;</font></td>  <td>Exponents</td> </tr>
-                                <tr> <td><font color="orange">&le;</font></td>  <td>Remainder</td> </tr>
+                                <tr> <td><font color="orange">==</font></td>  <td>Equal to</td> </tr>
+                                <tr> <td><font color="orange">!=</font></td>  <td>Not equal to</td> </tr>
+                                <tr> <td><font color="orange">&gt;</font></td>  <td>Greater than</td> </tr>
+                                <tr> <td><font color="orange">&lt;</font></td>  <td>Less than</td> </tr>
+                                <tr> <td><font color="orange">&ge;</font></td>  <td>Greather than or equal to</td> </tr>
+                                <tr> <td><font color="orange">&le;</font></td>  <td>Less than or equal to</td> </tr>
                             </table>
                         </div>
                     </section>
@@ -326,8 +319,8 @@
                         In [4]: 5/2
                         Out[4]: 2.5
 
-                        In [5]: 2^100
-                        Out[5]: 102
+                        In [5]: 2**100
+                        Out[5]: 1267650600228229401496703205376
                         </code></pre>
                     </section>
                 </section>
@@ -669,15 +662,15 @@
                     <section>
                         <h3>Example of a script</h3>
                         <pre><code class="hljs" data-trim contenteditable>
-                        >>> spam = raw_input(“2 letter word for (and rhymes with) you & me: “) >>> guido = [spam, ‘eggs’]
+                        >>> spam = input(“2 letter word for (and rhymes with) you & me: “) >>> guido = [spam, ‘eggs’]
                         
                         >>> if guido[1] == ‘eggs’:
                                 guido[1] = ‘are the’ >>> x = guido
                         
-                        >>> sausage = raw_input(“Like a time of day, but begins with ‘k’: “)
+                        >>> sausage = input(“Like a time of day, but begins with ‘k’: “)
                         >>> y = sausage + ‘s’
                         
-                        >>> bacon = raw_input(“Fill in the blank in this children’s game: Simon ____: “) >>> z = [‘who’, bacon[0:-1]]
+                        >>> bacon = input(“Fill in the blank in this children’s game: Simon ____: “) >>> z = [‘who’, bacon[0:-1]]
                         
                         >>> print( x, y, z, “Ni!”)
                         </code></pre>
