@@ -36,13 +36,589 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-                <section data-markdown>
-                    <textarea data-template>
-                        ## Bridge Computational Bootcamp
-                        
-                        Fall 2018
-                    </textarea>
+<!--Intro-->
+                <section>
+                    <h2><font color="orange">Python II</font> <br><font color="yellow"></font></h2>
                 </section>
+<!--What is Python-->
+                <section>
+                    <section>
+                        <h2>Today's topics</h2>
+                        <ul>
+                            <li class="fragment">Review</li>
+                            <li class="fragment">Scripting</li>
+                            <li class="fragment">Functions</li>
+                            <li class="fragment">Loops</li>
+                            <li class="fragment">Reading/Writing files &amp; formatting output</li>
+                            <li class="fragment">Libraries</li>
+                            
+                        </ul>
+                    </section>
+                </section>
+<!--Review-->
+                <section>
+                    <section>
+                        <h3>Review</h3>
+                        <ul>
+                            <li><font color="orange">Numeric and string input</font>:<pre><code class="hljs" data-trim contenteditable>&lt;variable&gt; = input &lt;prompt&gt;</code></pre>  </li>
+                            <li><font color="orange">Lists, mutable, mixed-type</font>:  <pre><code class="hljs" data-trim contenteditable>[&lt;item1&gt;, &lt;item2&gt;, ...]</code></pre></li>
+                            <li><font color="orange">Tuples, immutable list</font>:  <pre><code class="hljs" data-trim contenteditable>(&lt;item1&gt;, &lt;item2&gt;, ...)</code></pre></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Review</h3>
+                        <ul>
+                            <li><font color="orange">Dictionaries, mutable key-value pairs</font>:  <pre><code class="hljs" data-trim contenteditable>{&lt;key1&gt;: &lt;value1&gt;, &lt;key2&gt;: &lt;value2&gt; ... }</code></pre></li>
+                            <li><font color="orange">Indexing</font>:  <pre><code class="hljs" data-trim contenteditable>&lt;variable&gt;[i]</code></pre></li>
+                            <li><font color="orange">Slicing</font>:  <pre><code class="hljs" data-trim contenteditable>&lt;variable&gt;[begin:end]</code></pre></li>
+                            <li><font color="orange">If statement</font>:  <pre><code class="hljs" data-trim contenteditable>if &lt;condition&gt;</code></pre></li>
+                        </ul>
+                    </section>
+                </section>
+<!--Scripts-->
+                <section>
+                    <section>
+                        <h2>Writing scripts</h2>
+                    </section>
+                    <section>
+                        <h3>Scripts</h3>
+                        <p>To run your <font color="orange">Python</font> script:</p>
+                        <ul>
+                            <li class="fragment">Add the "<font color="yellow"><code>.py</code></font>" extension</li>
+                            <li class="fragment">Needs <font color="yellow"><code>#!/usr/bin/env python</code></font> at top of script</li>
+                            <li class="fragment">To run the script:
+                                <pre><code class="hljs" data-trim contenteditable>
+                                python scriptname.py
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Scripts</h3>
+                        <p>From last time</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        
+                        In [1]: spam = input("2 letter words for (and rhymes with) you and me: ")
+
+                        In [3]: guido = [spam, 'eggs']
+
+                        In [4]: if (guido[1] == 'eggs'):
+                           ...:     guido[1] = 'are the'
+                           ...:
+
+                        In [5]: x = guido
+
+                        In [6]: sausage = input("Like a time of day, but begins with 'k': ")
+
+                        In [7]: y = sausage + 's'
+
+                        In [8]: bacon = input("Fill in the blank in this children's game: Simon ___: ")
+
+                        In [9]: z = ['who', bacon[0:-1]]
+
+                        In [10]: print(x, y, z, "Ni!")
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Scripts</h3>
+                        <p>Now you can put everything together</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        In [1]: def main():
+                           ...:     spam = input("2 letter words for (and rhymes with) you and me: ")
+                           ...:     guido = [spam, 'eggs']
+                           ...:     if (guido[1] == 'eggs'):
+                           ...:         guido[1] = 'are the'
+                           ...:     x = guido
+                           ...:     sausage = input("Like a time of day, but begins with 'k': ")
+                           ...:     y = sausage + 's'
+                           ...:     bacon = input("Fill in the blank in this children's game: Simon ___: ")
+                           ...:     z = ['who', bacon[0:-1]]
+                           ...:     print(x, y, z, "Ni!")
+                           ...:
+
+                        In [2]: main()
+                        </code></pre>
+                        <p class="fragment">You can now save this in a file with the <font color="yellow"><code>.py</code></font> extension!</p>
+                    </section>
+                </section>
+<!--Functions-->
+                <section>
+                    <section>
+                        <h2>Functions</h2>
+                    </section>
+                    <section>
+                        <h3>Functions</h3>
+                        <ul>
+                            <li>Define a function with <font color="orange"><code>def &lt;function&gt;():</code></font></li>
+                            <li>
+                                Call a function with <font color="orange"><code>&lt;function&gt;()</code></font>
+                                <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                                In [1]: def example_function():
+                                   ...:     print("This is a normal function")
+                                   ...:
+
+                                In [2]: example_function()
+                                This is a normal function
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Functions</h3>
+                        <ul>
+                            <li>You can pass <b>arguments</b> between functions</li>
+                            <li><font color="orange"><code>def &lt;function&gt;(&lt;arg1&gt;, &lt;arg2&gt;):</code></font></li>
+                            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                            In [1]: def greet(person):
+                               ...:     print('Hello ', person)
+                               ...:
+
+                            In [2]: def main():
+                               ...:     name = input("What is your name?: ")
+                               ...:     greet(name)
+                               ...:
+
+                            In [3]: main()
+                            What is your name?: Victor
+                            Hello  Victor
+                            </code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Functions</h3>
+                        <ul>
+                            <li>They can also <font color="orange">return</font> values!</li>
+                            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                            In [1]: def square(x):
+                               ...:     z = float(x)**2
+                               ...:     return z
+                               ...:
+
+                            In [2]: def main():
+                               ...:     number = input("Pick a number, any number: ")
+                               ...:     y = square(number)
+                               ...:     print("The square of your number is: ", y)
+                               ...:
+
+                            In [3]: main()
+                            Pick a number, any number: 16
+                            The square of your number is:  256.0
+                            </code></pre>
+                        </ul>
+                        <p class="fragment">See how I had to change the <font color="yellow">input</font>. It was a string, so I changed it to a <font color="orange">float</font>!</p>
+                    </section>
+                    <section>
+                        <h3>Functions</h3>
+                        <ul>
+                            <li>Functions should have <font color="orange">docstrings</font>!</li>
+                            <li>This is the <b>documentation of the function</b></li>
+                            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                            In [1]: def square(x):
+                               ...:     """
+                               ...:     Returns the square of a number `x`
+                               ...:
+                               ...:     Parameters
+                               ...:     -----------
+                               ...:     x : `float`, `str`, `int`
+                               ...:         Input number.
+                               ...:
+                               ...:     Returns
+                               ...:     ----------
+                               ...:     z : `float`
+                               ...:         Square value of `x`
+                               ...:     """
+                               ...:     z = float(x)**2
+                               ...:     return z
+                            </code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Functions</h3>
+                        <ul>
+                            <li>You can call the docstring in iPythonwith the <font color="orange">?</font> symbol</li>
+                            <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                            In [3]: square?
+                            Signature: square(x)
+                            Docstring:
+                            Returns the square of a number `x`
+
+                            Parameters
+                            -----------
+                            x : `float`, `str`, `int`
+                                Input number.
+
+                            Returns
+                            ----------
+                            z : `float`
+                                Square value of `x`
+                            File:      ~/&lt;ipython-input-2-56d47fb12480&gt;
+                            Type:      function
+                            </code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Functions</h3>
+                        <ul>
+                            <li class="fragment">The <font color="orange">docstring</font> of a function is <b><font color="yellow">very</font></b> important!</li>
+                            <li class="fragment">You should <b><u><font color="orange">always</font></u></b> document your functions and code!</li>
+                            <li class="fragment">You'll be making yourself and others a <b>favor</b></li>
+                            <li class="fragment">And you might use it in the <font color="orange">future</font>!!</li>
+                        </ul>
+                        <p class="fragment">For more info on how to <b>properly</b> write <font color="orange">docstrings</font>, see:<br>
+                        <a href="https://docs.python-guide.org/writing/documentation/#docstrings-and-magic" target="_blank">https://docs.python-guide.org/writing/documentation/#docstrings-and-magic</a></p>
+                    </section>
+                </section>
+<!--Loops-->
+                <section>
+                    <section>
+                        <h2>Loops <br> <font color="orange">How to write them</font></h2>
+                    </section>
+                    <section>
+                        <h3>Loops - <font color="orange"><code>for</code> loops</font></h3>
+                        <p>The main format of the <code>for</code> loop is:</p>
+                        
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        for &lt;variable&gt; in &lt;sequence&gt;:
+                            do something
+                        </code></pre>
+                        <p>Examples</p>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        In [1]: word = 'spam'
+                        In [2]: for letter in word:
+                           ...:     print(letter)
+                           ...:
+
+                        In [3]: for i in [1, 3, 5, 7, 9]:
+                           ...:     print(i * i)
+
+                        In [4]: for i in range(10):
+                           ...:     x = 3.9 * i * (1 - i)
+                           ...:     print(x)
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Loops - <font color="orange"><code>while</code> loops</font></h3>
+                        <p>The main format of the <code>while</code> loop is:</p>
+                        
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        while &lt;condition&gt;:
+                            &lt;body&gt;
+                        </code></pre>
+                        <p class="fragment">Examples</p>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        In [2]: while(i &lt; 10):
+                           ...:     print(i)
+                           ...:     i = i + 1
+                           ...:
+                        0
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        </code></pre>
+                        <p class="fragment"><font size=6>Note that you can also write:</font></p>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        i += 1
+                        </code></pre>
+                        <p class="fragment"><font size=6>instead of <code><font color="orange">i = i + 1</font></code></font></p>
+                    </section>
+                </section>
+<!--Reading files-->
+                <section>
+                    <section>
+                        <h2>Reading files</h2>
+                    </section>
+                    <section>
+                        <h3>Reading files</h3>
+                        <ul>
+                            <li class="fragment"><font color="orange"><code>&lt;filevar&gt;.read()</code></font></li>
+                            <ul class="fragment">
+                                <li>
+                                    <font size=6>Returns the entire contents of the file as a single string</font>
+                                </li>
+                            </ul>
+                            <li class="fragment"><font color="orange"><code>&lt;filevar&gt;.readline()</code></font></li>
+                            <ul class="fragment">
+                                <li>
+                                    <font size=6>Returns the next line of the file, up to and including the next newline character <font color="yellow"><code>\n</code></font></font>
+                                </li>
+                            </ul>
+                            <li class="fragment"><font color="orange"><code>&lt;filevar&gt;.readlines()</code></font></li>
+                            <ul class="fragment">
+                                <li><font size=6>Returns a list of the remaining lines in the f</font></li>
+                                <li><font size=6>Each item in the list if a <u>line</u> including the <em>newline</em> character.</font></li>
+                            </ul>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Reading files</h3>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        # How to open a file. The 'r' stands for 'read'.
+                        infile = open('filename.dat', 'r')
+                        
+                        # Saves the entire content of the file as a single string
+                        data = infile.read()
+                        
+                        # Print out data
+                        print(data)
+                        
+                        # Closes the file. Always remember to close your files!
+                        infile.close()
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Reading files</h3>
+                        <p><font size=6>Now you can print out the first <u>6 lines of </u> <code>sample.dat</code></font></p>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        # Opens the file in 'read' mode
+                        infile = open('sample.dat', 'r')
+                        
+                        # Loops over the first 6 lines
+                        for i in range(6):
+                            # Saves output to 'line'
+                            line = infile.readline()
+                            print( line[:-1] )
+                        
+                        # Closes the file.
+                        infile.close()
+                        </code></pre>
+                        <p><font size=6>You can open files with the <font color="orange"><code>r</code></font> option.</font></p>
+                    </section>
+                </section>
+<!--Writing files-->
+                <section>
+                    <section>
+                        <h2>Writing files</h2>
+                    </section>
+                    <section>
+                        <h3>Writing files</h3>
+                        <ul class="fragment">
+                            <li><font color="orange"><code>&lt;filevar&gt;.write(&lt;string&gt;)</code></font></li>
+                        </ul>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        # Writes to file 'out.dat' and saves it as the object 'outfile'
+                        outfile = open('out.dat', 'w')
+                        
+                        # You write strings to 'outfile'.
+                        # See the newline character and how it is being added
+                        # to the string.
+                        outfile.write( "Spam and eggs\n")
+                        outfile.write( "Spam, bacon, eggs, and spam\n")
+                        
+                        # Close the file
+                        outfile.close()
+                        </code></pre>
+                        <p class="fragment"><font color="orange">Watch out</font> ... <font color="yellow"><code>'w'</code></font> will <u>overwrite</u> the file each time it is reopened.</p>
+                        <p class="fragment">You can use <font color="yellow"><code>'a'</code></font> instead to append to the file</p>
+                    </section>
+                </section>
+<!--Formatting-->
+                <section>
+                    <section>
+                        <h2>Formatting</h2>
+                    </section>
+                    <section>
+                        <h3>Formatting</h3>
+                        <font size=6>
+                        <ul>
+                            <li>You can format strings by specifying the type of data</li>
+                            <li><font color="orange"><code>&lt;format specifier&gt; % (&lt;values&gt;)</code></font></li>
+                            <li>Format specifier: <font color="yellow"><code>%&lt;width&gt;.&lt;precision&gt;.&lt;datatype&gt;</code></font></li>
+                        </ul>
+                        <p>You can specify the type of data types as well!</p>
+                        </font>
+                    </section>
+                    <section>
+                        <h3>Formatting</h3>
+                        <font size=6>
+                            <ul>
+                                <li>Possible data types: <font color="orange"><u>d</u>ecimal, <u>f</u>loat, and <u>s</u>tring</font></li>
+                            </ul>
+                            <p>As part of the string, you can specify:</p>
+                            <ul>
+                                <li><font color="orange">width</font>
+                                    <ul>
+                                        How manyplaces to use in display. If not enough, Python will expand to fit the value. Width of <font color="yellow">0</font> means "use as much space as needed.
+                                    </ul>
+                                </li>
+                                <li><font color="orange">precision</font>
+                                    <ul>
+                                        with floats, <em>precision</em> indicates the number of digits <em>after</em> the decimal
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p><font color="yellow">width</font> and <font color="yellow">precision</font> are <em>optional</em></p>
+                        </font>
+                    </section>
+                    <section>
+                        <h3>Formatting</h3>
+                        <p>Some examples are</p>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        In [1]: a = 165.2
+
+                        In [2]: print( '%.2d' %(a))
+                        165
+
+                        In [3]: b = 1024.65748
+
+                        In [4]: print( '%.3f' %b)
+                        1024.657
+
+                        In [5]: print( '%s and another %s' %('spam', 'ham'))
+                        spam and another ham
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>A better way of formatting</h3>
+                        <p>There is a <u>better</u> and <u>easier</u> way of formatting strings.</p>
+                        <p><font color="yellow"><code>'some_string_{0}'.format(something)</code></font></p>
+                    </section>
+                    <section>
+                        <h3>A better way of formatting</h3>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        In [1]: a = 123.45
+                        In [2]: b = 45
+                        In [3]: c = 'some string'
+
+                        In [4]: 'a is equal to {0}, but b is equal to {1}'.format(a, b)
+                        Out[4]: 'a is equal to 123.45, but b is equal to 45'
+
+                        In [5]: 'you can also print out strings: {0}'.format(c)
+                        Out[5]: 'you can also print out strings: some string'
+
+                        In [6]: 'And combine numbers (a = {0:.1f} and strings (c = {1})'.format(a, c)
+                        Out[6]: 'And combine numbers (a = 123.5 and strings (c = some string)'
+                        </code></pre>
+                        <font size=6>
+                            <ul class="fragment">
+                                <li><font color="yellow"><code>format</code></font> is really easy to use</li>
+                                <li>You don't have to convert into strings</li>
+                                <li>And you can use with along with arrays</li>
+                            </ul>
+                        </font>
+                    </section>
+                    <section>
+                        <h3>A better way of formatting</h3>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        In [7]: array1 = [1, 'pancake', 2.0, 'testing']
+
+                        In [8]: str1 = 'First is "{0}", then "{1}". Third element is "{2}", and finally "{3}"'
+
+                        In [9]: str1.format(*array1)
+                        Out[9]: 'First is "1", then "pancake". Third element is "2.0", and finally "testing"'
+                        </code></pre>
+                        <font size=6>
+                            <ul class="fragment">
+                                <li><font color="grey"><code>format</code> is really easy to use</font></li>
+                                <li><font color="grey">You don't have to convert into strings</font></li>
+                                <li><font color="orange">And you can use with along with arrays</font></li>
+                            </ul>
+                        </font>
+                    </section>
+                </section>
+<!--Libraries-->
+                <section>
+                    <section>
+                        <h2>Libraries</h2>
+                    </section>
+                    <section>
+                        <h3>Libraries</h3>
+                        <p>Whenever you write a script or interact with Python, you want to include some <font color="orange">packages</font>:</p>
+                        <ul>
+                            <li><font color="yellow">Math</font> - 'advanced' math functions</li>
+                            <li><font color="yellow">Strings</font> - String manipulation functions</li>
+                            <li><font color="yellow">os</font> - Operating system interface</li>
+                            <li>etc.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Libraries</h3>
+                        <p>Ways of using a package</p>
+                        <ul>
+                            <li>
+                                <font color="orange"><code>import &lt;library&gt;</code></font>
+                            </li>
+                        </ul>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        ## Import the complete package
+                        import math
+
+                        # Access a function
+                        math.sqrt(x)
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Libraries</h3>
+                        <p>Ways of using a package</p>
+                        <ul>
+                            <li>
+                                <font color="orange"><code>from &lt;library&gt; import &lt;function&gt;</code></font>
+                            </li>
+                        </ul>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        ## Importing only a module of the package
+                        from numpy import arange
+
+                        # Access a function
+                        arange(10)
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Libraries</h3>
+                        <p>Ways of using a package</p>
+                        <ul>
+                            <li>
+                                <font color="orange"><code>from &lt;library&gt; import *</code></font>
+                            </li>
+                        </ul>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        ## Importing only a module of the package
+                        from numpy import *
+
+                        # Access a function
+                        arange(10)
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Libraries</h3>
+                        <p>Out of the three methods of importing a package, <br> the best one is the:</p>
+                        <p><font color="orange"><code>import &lt;library&gt;</code></font></p>
+                        <p>because you're <u>not</u> overwriting <em>namespace</em></p>
+                        <p class="fragment">More info: <a href="https://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html" target="_blank">here</a></p>
+                    </section>
+                </section>
+<!--More resources-->
+                <section>
+                    <h2>Useful resources</h2>
+                    <ul>
+                        <li>Python Programming: An Introduction to Computer Science, by John Zelle</li>
+                        <li>Learning Python, by Mark Lutz</li>
+                        <li><a href="http://www.python.org/" target="_blank">http://www.python.org/</a></li>
+                        <li><a href="http://vanderbilt-astro-starting-grad-school.readthedocs.io/en/latest/useful_links.html#python-anaconda" target="_blank">http://vanderbilt-astro-starting-grad-school.readthedocs.io/en/latest/useful_links.html#python-anaconda</a></li>
+                    </ul>
+                </section>
+<!--Back to Main website-->
+                <section>
+                    <p>Back to main website:</p>
+                    <h3><a href="https://tinyurl.com/bcb18" target="_blank">https://tinyurl.com/bcb18</a></h3>
+                </section>
+<!---->
+<!---->
+
+<!---->
+<!---->
+
+                
+<!---->
+<!---->
+
+<!---->
+<!---->
 			</div>
 		</div>
 
@@ -90,6 +666,7 @@
 <div id="hidden" style="display:none;">
     <div id="header">
         <div id="header-left">Bridge Computational Bootcamp</div>
+        <div id="header-right">Day 04</div>
         <div id="footer-left">Victor Calderon (2018)</div>
     </div>
 </div>
