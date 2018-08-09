@@ -36,13 +36,463 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-                <section data-markdown>
-                    <textarea data-template>
-                        ## Bridge Computational Bootcamp
-                        
-                        Fall 2018
-                    </textarea>
+<!--Intro-->
+                <section>
+                    <h2><font color="orange">Structuring your code</font> <br><font color="yellow"></font></h2>
                 </section>
+<!--Why it is important-->
+                <section>
+                    <section>
+                        <h2>Why structuring your code?</h2>
+                    </section>
+                    <section>
+                        <h3>Why structuring your code?</h3>
+                        <ul>
+                            <li class="fragment">Organization</li>
+                            <li class="fragment">Code quality</li>
+                            <li class="fragment">Allows for easy collaboration</li>
+                            <li class="fragment">Makes your project reproducible!</li>
+                            <li class="fragment">What did I do ???</li>
+                        </ul>
+                        <p class="fragment">Ultimately ...</p>
+                        <p class="fragment"><font size=15 color="orange">other people will thank you ....</font></p>
+                        <p class="fragment"><font size=15 color="orange"><u>YOU WILL THANK YOU!!</u></font></p>
+                    </section>
+                </section>
+<!--Getting started-->
+                <section>
+                    <section>
+                        <h2>Getting started</h2>
+                    </section>
+                    <section>
+                        <h3>Getting started</h3>
+                        <p>You first need to install the <b><font color="orange">requirements!</font></b></p>
+                        <ul>
+                            <li>Python 2.7 or <font color="orange">3.5+</font> (use this one...)</li>
+                            <li><a href="http://cookiecutter.readthedocs.org/en/latest/installation.html" target="_blank"><code>cookiecutter</code> Python package</a></li>
+                        </ul>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        pip install cookiecutter
+                        </code></pre>
+                        <p class="fragment"><font color="orange"><code>cookiecutter</code></font> is a</p>
+                        <blockquote class="fragment">
+                            A command-line utility that creates projects from cookiecutters (project templates). E.g. Python package projects, jQuery plugin projects.
+                        </blockquote>
+                    </section>
+                    <section>
+                        <h3>Starting a new project</h3>
+                        <p>Starting a new project is really easy! <font color="orange">You don't need to create a directory first!</font></p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        cookiecutter https://github.com/drivendata/cookiecutter-data-science
+                        </code></pre>
+                        <p class="fragment">or <font color="orange">my version</font></p>
+                        <pre class="fragment"><code class="hljs" data-trim contenteditable>
+                        cookiecutter https://github.com/vcalderon2009/cookiecutter-data-science
+                        </code></pre>
+                        <p class="fragment">See: <br><a href="http://vanderbilt-astro-starting-grad-school.readthedocs.io/en/latest/structuring_your_code.html" target="_blank">http://vanderbilt-astro-starting-grad-school.readthedocs.io/en/latest/<br>structuring_your_code.html</a></p>
+                    </section>
+                    <section>
+                        <h3>Starting a new project</h3>
+                        <script type="text/javascript" src="https://asciinema.org/a/9bgl5qh17wlop4xyxu9n9wr02.js" id="asciicast-9bgl5qh17wlop4xyxu9n9wr02" async></script>
+                        <p><font size=5 color="orange">https://drivendata.github.io/cookiecutter-data-science/</font></p>
+                    </section>
+                    <section>
+                        <h3>Folder structure</h3>
+                        <img src="./images/image_05_01_folder_structure.png" alt="folder structure" width=400>
+                    </section>
+                </section>
+<!--Opinions-->
+                <section>
+                    <section>
+                        <h2>Good <font color="orange">coding</font> and project management</h2>
+                    </section>
+                    <section>
+                        <h3>Good <font color="orange">coding</font> and project management</h3>
+                        <p>There are some opinions that have grown out of experience with what works and what doesn't when collaborating on different projects.</p>
+                    </section>
+                    <section>
+                        <h3>Good <font color="orange">coding</font> and project management</h3>
+                        <font size=6>
+                        <ul>
+                            <li class="fragment">Data is immutable</li>
+                            <li class="fragment">Notebooks are for exploration and communication</li>
+                            <li class="fragment">Analysis is a DAG &rarr; use <code><font color="orange">Makefiles</font></code></li>
+                            <li class="fragment">Build from the environment up</li>
+                            <li class="fragment">Keep secrets and configuration out of version control</li>
+                            <li class="fragment">Be conservative in changing the default folder structure</li>
+                        </ul>
+                        </font>
+                        <p class="fragment">And always use <u><b><font color="orange">version control</font></b></u>!</p>
+                    </section>
+                </section>
+<!--How to write scripts-->
+                <section>
+                    <section>
+                        <h2>Writing a <font color="orange">good</font> script</h2>
+                    </section>
+                    <section>
+                        <h3>Writing a <font color="orange">good</font> script</h3>
+                        <p>Why?</p>
+                        <ul>
+                            <li class="fragment">Easy to read</li>
+                            <li class="fragment">Easy to execute</li>
+                            <li class="fragment">Easy to debug</li>
+                            <li class="fragment">Removes unnecessary portions of the code (<font color="yellow">linting</font>)</li>
+                        </ul>
+                        <h4 class="fragment"><font color="orange"><u>Easy to understand</u></font></h4>
+                    </section>
+                    <section>
+                        <h3>Writing a <font color="orange">good</font> script</h3>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        #! /usr/bin/env python
+                        # -*- coding: utf-8 -*-
+
+                        # AUTHOR
+                        # Created      : DATE
+                        # Last Modified: DATE
+                        # UNIVERSITY OR PLACE
+                        from __future__ import absolute_import, division, print_function 
+                        __author__     = ['AUTHOR']
+                        __copyright__  = ["Copyright 2018 AUTHOR, "]
+                        __email__      = ['EMAIL ADDRESS']
+                        __maintainer__ = ['AUTHOR']
+                        """
+
+                        """
+                        # Importing Modules
+                        from cosmo_utils       import mock_catalogues as cm
+                        from cosmo_utils       import utils           as cu
+                        from cosmo_utils.utils import file_utils      as cfutils
+                        from cosmo_utils.utils import file_readers    as cfreaders
+                        from cosmo_utils.utils import work_paths      as cwpaths
+                        from cosmo_utils.utils import stats_funcs     as cstats
+                        from cosmo_utils.utils import geometry        as cgeom
+                        from cosmo_utils.mock_catalogues import catls_utils as cmcu
+
+                        import numpy as num
+                        import math
+                        import os
+                        import sys
+                        import pandas as pd
+                        import pickle
+                        import matplotlib
+                        matplotlib.use( 'Agg' )
+                        import matplotlib.pyplot as plt
+                        import matplotlib.ticker as ticker
+                        plt.rc('text', usetex=True)
+                        import seaborn as sns
+                        #sns.set()
+                        from progressbar import (Bar, ETA, FileTransferSpeed, Percentage, ProgressBar,
+                                                ReverseBar, RotatingMarker)
+                        from tqdm import tqdm
+
+                        # Extra-modules
+                        import argparse
+                        from argparse import ArgumentParser
+                        from argparse import HelpFormatter
+                        from operator import attrgetter
+                        from tqdm import tqdm
+
+                        ## Functions
+                        class SortingHelpFormatter(HelpFormatter):
+                            def add_arguments(self, actions):
+                                """
+                                Modifier for `argparse` help parameters, that sorts them alphabetically
+                                """
+                                actions = sorted(actions, key=attrgetter('option_strings'))
+                                super(SortingHelpFormatter, self).add_arguments(actions)
+
+                        def _str2bool(v):
+                            if v.lower() in ('yes', 'true', 't', 'y', '1'):
+                                return True
+                            elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+                                return False
+                            else:
+                                raise argparse.ArgumentTypeError('Boolean value expected.')
+
+                        def _check_pos_val(val, val_min=0):
+                            """
+                            Checks if value is larger than `val_min`
+
+                            Parameters
+                            ----------
+                            val: int or float
+                                value to be evaluated by `val_min`
+
+                            val_min: float or int, optional (default = 0)
+                                minimum value that `val` can be
+
+                            Returns
+                            -------
+                            ival: float
+                                value if `val` is larger than `val_min`
+
+                            Raises
+                            -------
+                            ArgumentTypeError: Raised if `val` is NOT larger than `val_min`
+                            """
+                            ival = float(val)
+                            if ival &lt;= val_min:
+                                msg  = '`{0}` is an invalid input!'.format(ival)
+                                msg += '`val` must be larger than `{0}`!!'.format(val_min)
+                                raise argparse.ArgumentTypeError(msg)
+
+                            return ival
+
+                        def get_parser():
+                            """
+                            Get parser object for `eco_mocks_create.py` script.
+
+                            Returns
+                            -------
+                            args: 
+                                input arguments to the script
+                            """
+                            ## Define parser object
+                            description_msg = 'Description of Script'
+                            parser = ArgumentParser(description=description_msg,
+                                                    formatter_class=SortingHelpFormatter,)
+                            ## 
+                            parser.add_argument('--version', action='version', version='%(prog)s 1.0')
+                            parser.add_argument('-namevar', '--long-name',
+                                                dest='variable_name',
+                                                help='Description of variable',
+                                                type=float,
+                                                default=0)
+                            ##
+                            parser.add_argument('-namevar1', '--long-name1',
+                                                dest='variable_name1',
+                                                help='Description of variable',
+                                                type=_check_pos_val,
+                                                default=0.1)
+                            ## `Perfect Catalogue` Option
+                            parser.add_argument('-namevar2', '--long-name2',
+                                                dest='variable_name2',
+                                                help='Description of variable',
+                                                type=_str2bool,
+                                                default=False)
+                            ## Program message
+                            parser.add_argument('-progmsg',
+                                                dest='Prog_msg',
+                                                help='Program message to use throught the script',
+                                                type=str,
+                                                default=cfutils.Program_Msg(__file__))
+                            ## Parsing Objects
+                            args = parser.parse_args()
+
+                            return args
+
+                        def param_vals_test(param_dict):
+                            """
+                            Checks if values are consistent with each other.
+
+                            Parameters
+                            -----------
+                            param_dict: python dictionary
+                                dictionary with `project` variables
+
+                            Raises
+                            -----------
+                            ValueError: Error
+                                This function raises a `ValueError` error if one or more of the 
+                                required criteria are not met
+                            """
+                            ##
+                            ## This is where the tests for `param_dict` input parameters go.
+
+                        def is_tool(name):
+                            """Check whether `name` is on PATH and marked as executable."""
+
+                            # from whichcraft import which
+                            from shutil import which
+
+                            return which(name) is not None
+
+                        def add_to_dict(param_dict):
+                            """
+                            Aggregates extra variables to dictionary
+
+                            Parameters
+                            ----------
+                            param_dict: python dictionary
+                                dictionary with input parameters and values
+
+                            Returns
+                            ----------
+                            param_dict: python dictionary
+                                dictionary with old and new values added
+                            """
+                            # This is where you define `extra` parameters for adding to `param_dict`.
+
+                            return param_dict
+
+                        def directory_skeleton(param_dict, proj_dict):
+                            """
+                            Creates the directory skeleton for the current project
+
+                            Parameters
+                            ----------
+                            param_dict: python dictionary
+                                dictionary with `project` variables
+
+                            proj_dict: python dictionary
+                                dictionary with info of the project that uses the
+                                `Data Science` Cookiecutter template.
+
+                            Returns
+                            ---------
+                            proj_dict: python dictionary
+                                Dictionary with current and new paths to project directories
+                            """
+                            ## In here, you define the directories of your project
+
+                            return proj_dict
+
+
+
+                        def main(args):
+                            """
+
+                            """
+                            ## Reading all elements and converting to python dictionary
+                            param_dict = vars(args)
+                            ## Checking for correct input
+                            param_vals_test(param_dict)
+                            ## Adding extra variables
+                            param_dict = add_to_dict(param_dict)
+                            ## Program message
+                            Prog_msg = param_dict['Prog_msg']
+                            ##
+                            ## Creating Folder Structure
+                            # proj_dict  = directory_skeleton(param_dict, cwpaths.cookiecutter_paths(__file__))
+                            proj_dict  = directory_skeleton(param_dict, cwpaths.cookiecutter_paths('./'))
+                            ##
+                            ## Printing out project variables
+                            print('\n'+50*'='+'\n')
+                            for key, key_val in sorted(param_dict.items()):
+                                if key !='Prog_msg':
+                                    print('{0} `{1}`: {2}'.format(Prog_msg, key, key_val))
+                            print('\n'+50*'='+'\n')
+
+
+                        # Main function
+                        if __name__=='__main__':
+                            ## Input arguments
+                            args = get_parser()
+                            # Main Function
+                            main(args)
+
+                        </code></pre>
+                        <p>See this file <a href="https://github.com/VandyAstroML/2018_08_02_Fall_Bridge_Computational_Bootcamp_repo/blob/master/data/day_05/example_script.py" target="_blank">here</a></p>
+                    </section>
+                    <section>
+                        <h3>Writing a <font color="orange">good</font> script</h3>
+                        <p>This file assumes that you have a <br><u>fixed</u> <font color="orange">environment!!</font></p>
+                    </section>
+                    <section>
+                        <h3>This file includes</h3>
+                        <ul>
+                            <li class="fragment"><font color="orange"><code>argparse</code></font> - Parser for the command-line</li>
+                            <li class="fragment">Folder structure</li>
+                            <li class="fragment"><font color="orange">Testing</font></li>
+                            <li class="fragment">Functions for easy import</li>
+                            <li class="fragment">and more ...</li>
+                        </ul>
+                        <p class="fragment">You can start using this structure for your future projects.</p>
+                    </section>
+                    <section>
+                        <h3>Environment</h3>
+                        <p>A project must <u><font color="orange">always</font></u> have a defined <em>environment!</em></p>
+                        <h4><code><font color="yellow">environment.yml</font></code></h4>
+                    </section>
+                    <section>
+                        <h3>Environment</h3>
+                        <pre><code class="hljs" data-trim contenteditable>
+                        name: name_environment
+
+                        channels:
+                          - defaults
+
+                        dependencies:
+                          - python>=3.6
+                          - ipython
+                          - anaconda
+                          - astropy
+                          - h5py
+                          - numpy
+                          - pandas>=0.19.0
+                          - scipy
+                          - seaborn>=0.8.1
+                          - scikit-learn>=0.19.1
+                          - sphinx
+                          - pip
+                          - pip:
+                            - GitPython
+                            - progressbar2
+                            - sphinx_rtd_theme
+                            - tqdm
+                            - tables
+                        </code></pre>
+                        <font size=6>
+                            <p>This is an example of the <code><font color="yellow">environment.yml</font></code>.</p>
+                            <p>You should put this in the <u>main directory</u> of your project.</p>
+                            <p>See this file <a href="https://github.com/VandyAstroML/2018_08_02_Fall_Bridge_Computational_Bootcamp_repo/blob/master/data/day_05/environment.yml" target="_blank">here</a>!</p>
+                        </font>
+                    </section>
+                </section>
+<!--Exercise-->
+                <section data-background="#846A65">
+                    <h3>Exercise</h3>
+                    <p>Create a project repository with the following parameters:</p>
+                    <ul>
+                        <li><font color="orange"><code>Author - </code></font></li>
+                        <li><font color="orange"><code>License - </code></font></li>
+                        <li><font color="orange"><code>Project name - </code></font></li>
+                    </ul>
+                    <p>Do this in your <code><font color="yellow">2018_Bootcamp</font></code> folder</p>
+                </section>
+<!--Resources-->
+                <section>
+                    <h3>Resources</h3>
+                    <p>For more information, go to:</p>
+                    <ul>
+                        <li><a href="http://vanderbilt-astro-starting-grad-school.readthedocs.io/en/latest/structuring_your_code.html" target="_blank">http://vanderbilt-astro-starting-grad-school.readthedocs.io/en/latest/<br>structuring_your_code.html</a></li>
+                        <li><a href="https://drivendata.github.io/cookiecutter-data-science/" target="_blank">https://drivendata.github.io/<br>cookiecutter-data-science/</a></li>
+                    </ul>
+                </section>
+    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+<!--Back to Main website-->
+                <section>
+                    <p>Back to main website:</p>
+                    <h3><a href="https://tinyurl.com/bcb18" target="_blank">https://tinyurl.com/bcb18</a></h3>
+                </section>
+<!---->
+<!---->
+
+<!---->
+<!---->
+
+                
+<!---->
+<!---->
+
+<!---->
+<!---->
 			</div>
 		</div>
 
@@ -90,6 +540,7 @@
 <div id="hidden" style="display:none;">
     <div id="header">
         <div id="header-left">Bridge Computational Bootcamp</div>
+        <div id="header-right">Day 05</div>
         <div id="footer-left">Victor Calderon (2018)</div>
     </div>
 </div>
