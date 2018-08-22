@@ -2,12 +2,23 @@
 <html lang="en">
 
 	<head>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124447956-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-124447956-1');
+        </script>
+        
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+        <title>BCB-Day 03 - Introduction to Git</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Bridge Computational Bootcamp - Day 05 - Intro to Git and Github">
+		<meta name="author" content="Victor Calderon">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -130,7 +141,7 @@
                                 It works in a <font color="orange">client-server</font> relationship. It's easy to understand and your have more <em>control</em> over users and access
                             </p>
                         </font>
-                        <img src="./images/image_05_03_git_type_centralized.png" alt="git_branch">
+                        <img src="./images/image_05_03_git_type_centralized.png" alt="git_branch" height="250">
                         <p><font size=6><a href="http://guides.beanstalkapp.com/version-control/intro-to-version-control.html" target="_blank">http://guides.beanstalkapp.com/version-control/intro-to-version-control.html</a></font></p>
                     </section>
                     <section>
@@ -140,7 +151,7 @@
                                 More powerful and detailed change tracking &rarr; less conflicts! No server is necessary.
                             </p>
                         </font>
-                        <img src="./images/image_05_04_git_type_distributed.png" alt="git_branch">
+                        <img src="./images/image_05_04_git_type_distributed.png" alt="git_branch" height="250">
                         <p><font size=6><a href="http://guides.beanstalkapp.com/version-control/intro-to-version-control.html" target="_blank">http://guides.beanstalkapp.com/version-control/intro-to-version-control.html</a></font></p>
                     </section>
                 </section>
@@ -173,7 +184,7 @@
                         <ul>
                             <li class="fragment"><font color="orange">Github</font> is the platform that many people use to <em>host</em> their repositories.</li>
                             <li class="fragment">This repository is hosted on Github!</li>
-                            <li>You can use this along with the <code><font color="orange">cookiecutter Project template</font></code></li>
+                            <li class="fragment">You can use this along with the <code><font color="orange">cookiecutter Project template</font></code></li>
                         </ul>
                     </section>
                     <section>
@@ -233,7 +244,7 @@
                         open ~/.ssh/config
                         </code></font></pre>
                         <p>and add this to the file</p>
-                        <pre><font ><code class="hljs" data-trim contenteditable>
+                        <pre><font size=4><code class="hljs" data-trim contenteditable>
                         ## Connects to Github
                         Host github.com
                         HostName github.com
@@ -245,17 +256,17 @@
                     </section>
                     <section>
                         <h3>Github SSH Keys</h3>
-                        <ul>
-                           <li>Follow the instructions on:</li> 
-                        </ul>
-                        <a href="https://help.github.com/articles/connecting-to-github-with-ssh/" alt="github_ssh">https://help.github.com/articles/connecting-to-github-with-ssh/</a>
-                        <pre><font ><code class="hljs" data-trim contenteditable>
+                        <font size=5>
+                            <p>
+                                Follow the instructions on:<br><a href="https://help.github.com/articles/connecting-to-github-with-ssh/" alt="github_ssh">https://help.github.com/articles/connecting-to-github-with-ssh/</a>                            
+                        </font>
+                        <pre><font size=5><code class="hljs" data-trim contenteditable>
                         ls -al ~/.ssh
                         eval "$(ssh-agent -s)"
                         ssh-add ~/.ssh/ssh_keys/* # or ssh-add -K ~/.ssh/id_rsa if in Mac
                         </code></font></pre>
                         <p>And now test your connection</p>
-                        <pre><font ><code class="hljs" data-trim contenteditable>
+                        <pre><font size=5><code class="hljs" data-trim contenteditable>
                         # Attempts to ssh to GitHub
                         ssh -T git@github.com
                         
@@ -263,7 +274,6 @@
                         The authenticity of host 'github.com (IP ADDRESS)' can't be established.
                         RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
                         Are you sure you want to continue connecting (yes/no)?
-                        
                         ## You should see this
                         Hi username! You've successfully authenticated, but GitHub does not
                         provide shell access.
