@@ -1,10 +1,10 @@
-[![Main_Website](https://img.shields.io/badge/-Website-orange.svg)](https://vandyastroml.github.io/2018_08_02_Fall_Bridge_Computational_Bootcamp/)
+[![Main_Website](https://img.shields.io/badge/-Website-orange.svg)](https://vandyastroml.github.io/2019_08_02_Fall_Bridge_Computational_Bootcamp/)
 
-# 2018 - Fall Bridge Computational Bootcamp
+# 2019 - Fall Bridge Computational Bootcamp
 
-__Author__: Victor Calderon
+__Author__: Mehnaaz Asad
 
-__Email__: [victor.calderon@gvanderbilt.edu](mailto:victor.calderon@gmail.com)
+__Email__: [mehnaaz.asad@vanderbilt.edu](mailto:mehnaaz.asad@vanderbilt.edu)
 
 This is the repository of the **Bridge Computational Bootcamp**.
 Here you will find the necessary data and files to work with during the bootcamp.
