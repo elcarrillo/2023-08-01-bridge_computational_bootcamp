@@ -74,71 +74,8 @@
                             <li><font color="orange"><code>bashrc</code></font>: Executed for <u> non-login shells </u></li>
                             <li><font color="orange"><code>bash_profile</code></font>: Executed once when <u>starting </u> shell</li>
                         </ul>
-                        <p class="fragment">But most of the settings go in <font color="orange"><code>bashrc</code></font> file!</p>
+                        <p class="fragment">But most of the settings go in <font color="orange"><code>bash_profile</code></font> file!</p>
                         <p class="fragment" size="2">In Mac OSX, <font color="orange">both</font> files exist. In Linux, only <em>one</em> is used!</p>
-                    </section>
-                    <section>
-                        <h3><font color="orange"><code>bashrc</code></font> and <font color="orange"><code>bash_profile</code></font></h3>
-                        <p>A typical bashrc file looks like this: <br><a href="https://gist.github.com/giggio/1704664">https://gist.github.com/giggio/1704664</a></p>
-                        <pre><code class="hljs" data-trim contenteditable>
-                        # ~/.bashrc: executed by bash(1) for non-login shells.
-                        # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-                        # for examples
-
-                        # If not running interactively, don't do anything
-                        case $- in
-                            *i*) ;;
-                              *) return;;
-                        esac
-
-                        # don't put duplicate lines or lines starting with space in the history.
-                        # See bash(1) for more options
-                        HISTCONTROL=ignoreboth
-
-                        # append to the history file, don't overwrite it
-                        shopt -s histappend
-
-                        # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-                        HISTSIZE=1000
-                        HISTFILESIZE=2000
-
-                        # check the window size after each command and, if necessary,
-                        # update the values of LINES and COLUMNS.
-                        shopt -s checkwinsize
-
-                        # If set, the pattern "**" used in a pathname expansion context will
-                        # match all files and zero or more directories and subdirectories.
-                        #shopt -s globstar
-
-                        # make less more friendly for non-text input files, see lesspipe(1)
-                        [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-                        # set variable identifying the chroot you work in (used in the prompt below)
-                        if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-                            debian_chroot=$(cat /etc/debian_chroot)
-                        fi
-
-                        # set a fancy prompt (non-color, unless we know we "want" color)
-                        case "$TERM" in
-                            xterm-color) color_prompt=yes;;
-                        esac
-
-                        # uncomment for a colored prompt, if the terminal has the capability; turned
-                        # off by default to not distract the user: the focus in a terminal window
-                        # should be on the output of commands, not on the prompt
-                        #force_color_prompt=yes
-
-                        if [ -n "$force_color_prompt" ]; then
-                            if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-                            # We have color support; assume it's compliant with Ecma-48
-                            # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-                            # a case would tend to support setf rather than setaf.)
-                            color_prompt=yes
-                            else
-                            color_prompt=
-                            fi
-                        fi
-                        </code></pre>
                     </section>
                     <section>
                         <h3>You can use these files to customize how your shell session behaves, as well
@@ -219,7 +156,7 @@
                     </section>
                     <section>
                         <h3>Modifying your prompt</h3>
-                        <p>You can also modify the aspect of <br>your <font color="orange">command prompt</font></p>
+                        <p>You can modify how the command prompt <font color="orange"> looks </font> </p>
                         <pre><code class="hljs" data-trim contenteditable>
                         username@hostname:/path/to/working/directory (git-status)
                         </code></pre>
@@ -276,25 +213,25 @@
                         <pre><code class="hljs" data-trim contenteditable>
                         alias ll="ls -al"
                         </code></pre>
-                        <p class="fragment">Now whenever you type <font color="orange"><code>ll</code></font>, the system will understand it as <font color="orange"><code>ls -la</code></font></p>
+                        <p class="fragment">Now whenever you type <font color="orange"><code>ll</code></font>, the system will understand it as <font color="orange"><code>ls -al</code></font></p>
                     </section>
                     <section>
                         <h3>Creating aliases</h3>
-                        <p>If you want a <font color="orange">permanent</font> alias, you need to modify your <font color="orange"><code>~/.bashrc</code></font> file</p>
+                        <p>If you want a <font color="orange">permanent</font> alias, you need to modify your <font color="orange"><code>~/.aliases</code></font> file</p>
                         <pre><code class="hljs" data-trim contenteditable>
                         ## Example of other aliases
                         alias pushd='cd -'
                         alias    CD='cd'
-                        alias tree='tree -C'
+                        alias  tree='tree -C'
                         alias crone='crontab -e'
                         alias cronl='crontab -l'
-                        alias     jb='jupyter notebook'
+                        alias    jb='jupyter notebook'
                         </code></pre>
                         <p>This
                             <u><a href="https://raw.githubusercontent.com/VandyAstroML/2018_08_02_Fall_Bridge_Computational_Bootcamp/master/data/day_03/dot_files/.aliases" target="_blank">file</a></u>
-                            is a compilation of <em>useful</em> aliases for your terminal!
+                            is a compilation of <em>useful</em> aliases for your terminal! Make sure to source the file!!
                         </p>
-                        <p class="fragment">(See the <font color="orange">repository</font>)</p>
+                        <p class="fragment">(See the <font color="orange"><a href="https://github.com/VandyAstroML/2018_08_02_Fall_Bridge_Computational_Bootcamp_repo" target="_blank">repository</a></font>)</p>
                     </section>
                     <section>
                         <h3>Removing aliases</h3>
@@ -376,7 +313,7 @@
                     <section>
                         <h3>Using environment variables</h3>
                         <p><font size=6>You can set environment variables in your current shell, or you can make them <u><font color="orange">permanent</font></u></font></p>
-                        <p><font size=6>You can do this adding them to your <font color="orange"><code>~/.bashrc</code></font> file</font></p>
+                        <p><font size=6>You can do this adding them to your <font color="orange"><code>~/.bash_profile</code></font> file</font></p>
                         <pre class="fragment"><code class="hljs" data-trim contenteditable>
                         ## .bashrc file
                         ...
