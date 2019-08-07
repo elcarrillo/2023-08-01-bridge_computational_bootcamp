@@ -18,7 +18,7 @@
 		<title>BCB-Day 03 - Python - Part I</title>
 
 		<meta name="description" content="Bridge Computational Bootcamp - Day 03 - Python Part I">
-		<meta name="author" content="Victor Calderon">
+		<meta name="author" content="Mehnaaz Asad">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -49,7 +49,7 @@
 			<div class="slides">
 <!--Intro-->
                 <section>
-                    <h2><font color="orange">Python</font> <br><font color="yellow">What you should know about it!</font></h2>
+                    <h2><font color="orange">Python</font> <br><font color="#136BB9">What you should know about it!</font></h2>
                 </section>
 <!--What is Python-->
                 <section>
@@ -66,7 +66,7 @@
                         <ul>
                             <li>Developed by Guido van Rossum in 1989</li>
                             <li>It is <font color="orange"><b>FREE</b></font>!!</li>
-                            <li>Designed to be fun to use and <font color="yellow"><b>easy</b></font> to learn</li>
+                            <li>Designed to be fun to use and <font color="#136BB9"><b>easy</b></font> to learn</li>
                             <li>Named after <code>Monty Python's Flying Circus</code></li>
                         </ul>
                         <img class="fragment" src="./images/image_03_01_python_monty.jpg" alt="monty_python" height="500">
@@ -87,7 +87,7 @@
                         <h3>Installing Python</h3>
                         <ol>
                             <li>Go to <a href="https://www.anaconda.com/download/#macos" target="_blank">https://www.anaconda.com/download/#macos</a></li>
-                            <li>Download the corresponding installation file for <font color="yellow"><b>Python 3.6</b></font></li>
+                            <li>Download the corresponding installation file for <font color="#136BB9"><b>Python 3.6</b></font></li>
                             <li>Read the documentation in "<a href="https://docs.anaconda.com/anaconda/install/">How to Install ANACONDA</a>" and follow instructions</li>
                             <li>For command-line, use:
                             <pre><code class="hljs" data-trim contenteditable>
@@ -345,7 +345,7 @@
                         <h3>Data Types - <font color="orange">String</font></h3>
                         <ul>
                             <li>Immutable sequence of characters</li>
-                            <li>Examples: <code><font color="yellow">Spam</font></code>, <code><font color="yellow">eggs</font></code>, and <code><font color="yellow">spam and eggs</font></code></li>
+                            <li>Examples: <code><font color="#136BB9">Spam</font></code>, <code><font color="#136BB9">eggs</font></code>, and <code><font color="#136BB9">spam and eggs</font></code></li>
                         </ul>
                         <pre><code class="hljs" data-trim contenteditable>
                         In [1]: S = "Spam"
@@ -354,7 +354,7 @@
                     <section>
                         <h3>Data Types - <font color="orange">String</font></h3>
                         <ul>
-                            <li>To get the length f a string, use: <code><font color="yellow">len(string_name)</font></code></li>
+                            <li>To get the length f a string, use: <code><font color="#136BB9">len(string_name)</font></code></li>
                         </ul>
                         <pre><code class="hljs" data-trim contenteditable>
                         In [1]: S = "Spam"
@@ -366,8 +366,8 @@
                     <section>
                         <h3>Data Types - <font color="orange">String</font></h3>
                         <ul>
-                            <li><font color="orange">Indexing</font>: items are ordered left-to-right, beginning with <font color="yellow">0</font></li>
-                            <li><code><font color="yellow">string_name[index]</font></code></li>
+                            <li><font color="orange">Indexing</font>: items are ordered left-to-right, beginning with <font color="#136BB9">0</font></li>
+                            <li><code><font color="#136BB9">string_name[index]</font></code></li>
                         </ul>
                         <pre><code class="hljs" data-trim contenteditable>
                         In [1]: S = "Spam"
@@ -389,7 +389,7 @@
                         <h3>Data Types - <font color="orange">String</font></h3>
                         <ul>
                             <li><font color="orange">Slicing</font>: Extracts whole sections</li>
-                            <li><code><font color="yellow">string_name[begin:end]</font></code></li>
+                            <li><code><font color="#136BB9">string_name[begin:end]</font></code></li>
                         </ul>
                         <p>Try: <font color="orange">S[1:3]</font></p>
                         <pre><code class="hljs" data-trim contenteditable>
@@ -514,7 +514,7 @@
                         <h3>Data Types - <font color="orange">Lists</font></h3>
                         <ul>
                             <li>Can create multidimensional lists</li>
-                            <li>Index the list. Try extracting the <font color="yellow">3</font></li>
+                            <li>Index the list. Try extracting the <font color="#136BB9">3</font></li>
                         </ul>
                         <pre><code class="hljs" data-trim contenteditable>
                         In [1]: M = []
@@ -673,24 +673,27 @@
                     <section>
                         <h3>Example of a script</h3>
                         <pre><code class="hljs" data-trim contenteditable>
-                        >>> spam = input(“2 letter word for (and rhymes with) you & me: “) >>> guido = [spam, ‘eggs’]
+                        >>> spam = input("2 letter word for (and rhymes with) you & me: ") 
+                        >>> guido = [spam, 'eggs']
                         
-                        >>> if guido[1] == ‘eggs’:
-                                guido[1] = ‘are the’ >>> x = guido
+                        >>> if guido[1] == 'eggs':
+                                guido[1] = 'are the' 
+                        >>> x = guido
                         
-                        >>> sausage = input(“Like a time of day, but begins with ‘k’: “)
-                        >>> y = sausage + ‘s’
+                        >>> sausage = input("Like a time of day, but begins with 'k': ")
+                        >>> y = sausage + 's'
                         
-                        >>> bacon = input(“Fill in the blank in this children’s game: Simon ____: “) >>> z = [‘who’, bacon[0:-1]]
+                        >>> bacon = input("Fill in the blank in this children's game: Simon ____: ") 
+                        >>> z = ['who', bacon[0:-1]]
                         
-                        >>> print( x, y, z, “Ni!”)
+                        >>> print( x, y, z, "Ni!")
                         </code></pre>
                     </section>
                 </section>
 <!--Back to Main website-->
                 <section>
                     <p>Back to main website:</p>
-                    <h3><a href="https://tinyurl.com/bcb18">https://tinyurl.com/bcb18</a></h3>
+                    <h3><a href="https://tinyurl.com/bcb2019">https://tinyurl.com/bcb2019</a></h3>
                 </section>
 <!---->
 
@@ -753,7 +756,7 @@
     <div id="header">
         <div id="header-left">Bridge Computational Bootcamp</div>
         <div id="header-right">Day 03</div>
-        <div id="footer-left">Victor Calderon (2018)</div>
+        <div id="footer-left">Mehnaaz Asad (2019)</div>
     </div>
 </div>
 
