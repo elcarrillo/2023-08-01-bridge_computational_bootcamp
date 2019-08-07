@@ -18,7 +18,7 @@
         <title>BCB-Day 03 - Bash and Terminal</title>
 
 		<meta name="description" content="Bridge Computational Bootcamp - Day 03 - Bash and Terminal">
-		<meta name="author" content="Victor Calderon">
+		<meta name="author" content="Mehnaaz Asad">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -71,8 +71,8 @@
                     <section>
                         <h2><font color="orange"><code>bashrc</code></font> and <font color="orange"><code>bash_profile</code></font></h2>
                         <ul class="fragment">
-                            <li><font color="orange"><code>bashrc</code></font>: Initializes an <u>interactive session</u></li>
-                            <li><font color="orange"><code>bash_profile</code></font>: Executed once when starting shell</li>
+                            <li><font color="orange"><code>bashrc</code></font>: Executed for <u> non-login shells </u></li>
+                            <li><font color="orange"><code>bash_profile</code></font>: Executed once when <u>starting </u> shell</li>
                         </ul>
                         <p class="fragment">But most of the settings go in <font color="orange"><code>bashrc</code></font> file!</p>
                         <p class="fragment" size="2">In Mac OSX, <font color="orange">both</font> files exist. In Linux, only <em>one</em> is used!</p>
@@ -157,7 +157,7 @@
                     <section>
                         <h3>Modifying your prompt</h3>
                         <ul>
-                            <li>Open the terminal and type: <code><font color="orange">nano ~/.bashrc</font></code>.
+                            <li>Open the terminal and type: <code><font color="orange">vim ~/.bashrc</font></code>.
                             (If it doesn't exist, create it with <code>touch</code>.)</li>
                         </ul>
                         <pre><code class="hljs" data-trim contenteditable>
@@ -171,7 +171,7 @@
                         alias ls='ls -GFh'
                         </code></pre>
                         <ul>
-                            <li>Hit <font color="orange">Control+O</font> to save, then <font color="orange">Control+X</font> to exit out of nano</li>
+                            <li>Type <font color="orange">:wq</font> to save and exit out of vim</li>
                         </ul>
                     </section>
                     <section>
@@ -233,10 +233,8 @@
                     </section>
                     <section>
                         <h3>Modifying your prompt</h3>
-                        <p>Or you can use</p>
-                        <a href="http://ezprompt.net/" target="_blank">http://ezprompt.net/</a>
-                        <p>to also customize your prompt:</p>
-                        <img src="./images/image_03_00_prompt.png" alt="prompt_generator" width="500">
+                        <p>Or you can use <a href="http://ezprompt.net/" target="_blank">http://ezprompt.net/</a> to also customize your prompt:</p>
+                        <img src="./images/image_03_00_prompt.png" alt="prompt_generator" width="400">
                     </section>
                 </section>
 <!--Aliases-->
@@ -248,7 +246,6 @@
                             <li class="fragment">For <em>simple</em> and <em>complex</em> commands</li>
                             <li class="fragment">Temporary or <em>permanent</em></li>
                             <li class="fragment">Used to navigate your terminal</li>
-                            <li class="fragment">etc.</li>
                         </ul>
                     </section>
                     <section>
@@ -311,7 +308,7 @@
                         # This will remove the 'crone' alias
                         unalias crone
                         </code></pre>
-                        <p class="fragment">If you want remove a <font color="yellow">permanent</font> alias, you will need to edit your <font color="orange">~/.aliases</font> file!</p>
+                        <p class="fragment">If you want remove a <font color="orange">permanent</font> alias, you will need to edit your <font color="orange">~/.aliases</font> file!</p>
                     </section>
                     <section>
                         <h3>Aliases</h3>
@@ -335,7 +332,7 @@
                     </section>
                     <section>
                         <h2>Aliases</h2>
-                        <p>For more info on <font color="yellow">aliases</font> and how to use them, <br>see:</p>
+                        <p>For more info on <font color="orange">aliases</font> and how to use them, <br>see:</p>
                         <a href="https://jonsuh.com/blog/bash-command-line-shortcuts/" target="_blank">https://jonsuh.com/blog/bash-command-line-shortcuts/</a>
                     </section>
                 </section>
@@ -362,7 +359,7 @@
                     </section>
                     <section>
                         <h3>Creating environment variables</h3>
-                        <p>Creating a variable named <font color="orange"><code>TEST_VAR</code></font></p>
+                        <p>Creating a <u>shell</u> variable named <font color="orange"><code>TEST_VAR</code></font></p>
                         <pre><code class="hljs" data-trim contenteditable>
                         TEST_VAR='Hello World!'
                         </code></pre>
@@ -396,7 +393,7 @@
                     </section>
                     <section>
                         <h2>Environment Variables</h2>
-                        <p>For more information on <font color="yellow">environment variables</font>, <br> see:</p>
+                        <p>For more information on <font color="orange">environment variables</font>, <br> see:</p>
                         <a href="https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps#setting-shell-and-environmental-variables" target="_blank">https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps#setting-shell-and-environmental-variables</a>
                     </section>
                 </section>
@@ -406,9 +403,9 @@
                         <h3>Putting it all together ...</h3>
                         <p>You learned how to</p>
                         <ul>
-                            <li class="fragment">Customize the way your <font color="yellow">terminal prompt</font> looks</li>
+                            <li class="fragment">Customize the way your <font color="orange">terminal prompt</font> looks</li>
                             <li class="fragment">Edit your <font color="orange"><code>~/.bashrc</code></font> file</li>
-                            <li class="fragment">Work with <font color="yellow"><code>aliases</code></font></li>
+                            <li class="fragment">Work with <font color="orange"><code>aliases</code></font></li>
                             <li class="fragment">Set <font color="orange">environment variables</font></li>
                         </ul>
                         <p class="fragment">Now you can add/modify your environment. You can use the <code>dot</code> files found at:</p>
@@ -419,7 +416,7 @@
 <!--Back to Main website-->
                 <section>
                     <p>Back to main website:</p>
-                    <h3><a href="https://tinyurl.com/bcb18">https://tinyurl.com/bcb18</a></h3>
+                    <h3><a href="https://tinyurl.com/bcb2019">https://tinyurl.com/bcb2019</a></h3>
                 </section>
 <!---->
 
@@ -482,7 +479,7 @@
     <div id="header">
         <div id="header-left">Bridge Computational Bootcamp</div>
         <div id="header-right">Day 03</div>
-        <div id="footer-left">Victor Calderon (2018)</div>
+        <div id="footer-left">Mehnaaz Asad (2019)</div>
     </div>
 </div>
 
