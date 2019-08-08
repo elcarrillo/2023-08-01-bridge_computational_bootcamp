@@ -194,9 +194,9 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 <p><a href="{{ site.lc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.lc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
 {% endif %}
+{% endcomment %}
 
 <hr/>
-{% endcomment %}
 
 {% comment %}
   SCHEDULE
