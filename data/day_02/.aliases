@@ -1,0 +1,50 @@
+#aliases
+
+## Grad School
+#Changing directories
+alias research='godiva; cd Research; clear'
+alias godiva='cd ~/Documents/Grad_School'
+alias repositories='cd ~/Documents/Grad_School/Research/Repositories'
+alias gc='repositories; cd eco_globular_clusters; clear;'
+alias resolve='repositories; cd resolve_statistics; clear;'
+alias ecomocks='repositories; cd ECO_Resolve/ECO_Vishnu_mock_catalogues; clear;'
+alias bcb20='godiva; cd Computational_Bootcamp/2020_08_02_Fall_Bridge_Computational_Bootcamp; clear;'
+
+#SSH 
+#alias bender='ssh -X -Y -o ServerAliveInterval=30 asadm2@bender.accre.vanderbilt.edu'
+alias bender='ssh bender_ssh'
+alias djr='ssh djroomba_ssh'
+alias skeys='ssh-add -K ~/.ssh/ssh_keys/*'
+
+#Terminal 
+alias ll='ls -l'
+alias lll='ls -lah'
+alias rm='rm -i'
+alias sb='source ~/.bash_profile'
+alias bp='open ~/.aliases'
+alias figsync='./Synch_files.sh figures'
+alias datasync='./Synch_files.sh data'
+alias timemachine='sudo sysctl debug.lowpri_throttle_enabled=0'
+alias crone='crontab -e'
+alias cronl='crontab -l'
+alias openvsc='open -a "Visual Studio Code" '
+alias unpack='tar -xvf '
+
+# Git commands
+alias gadd='git add'
+alias gcom='git commit -m '
+alias gst='git status'
+alias gp='git push'
+alias uncommit='git reset HEAD~'
+
+## Environments
+alias sa='conda activate'
+alias sd='conda deactivate'
+
+## Project management
+alias cookieproj='cookiecutter https://github.com/vcalderon2009/cookiecutter-data-science'
+alias cookieprojdata='cookiecutter https://github.com/drivendata/cookiecutter-data-science'
+
+## Papers
+alias bibresolve='cp -v /Users/asadm2/Documents/BibTex_Files/library.bib /Users/asadm2/Documents/Grad_School/Research/Papers/RESOLVE_Statistics_paper/Mendeley.bib'
+alias papers='research; cd Papers; clear'
