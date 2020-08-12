@@ -73,6 +73,26 @@
                         <h2>Concepts</h2>
                     </section>
                     <section>
+                        <h4>Concepts - <font color="orange">Types of Version Control - Centralized</font></h4>
+                        <font size=6>
+                            <p>
+                                It works in a <font color="orange">client-server</font> relationship. It's easy to understand and you have more <em>control</em> over users and access
+                            </p>
+                        </font>
+                        <img src="./images/image_05_03_git_type_centralized.png" alt="git_branch" height="250">
+                        <p><font size=6><a href="http://guides.beanstalkapp.com/version-control/intro-to-version-control.html" target="_blank">http://guides.beanstalkapp.com/version-control/intro-to-version-control.html</a></font></p>
+                    </section>
+                    <section>
+                        <h4>Concepts - <font color="orange">Types of Version Control - Distributed</font></h4>
+                        <font size=6>
+                            <p>
+                                More powerful and detailed change tracking &rarr; less conflicts! No server is necessary. <font color="#2ec7bf">Git</font> is an example of this type of version control.
+                            </p>
+                        </font>
+                        <img src="./images/image_05_04_git_type_distributed.png" alt="git_branch" height="250">
+                        <p><font size=6><a href="http://guides.beanstalkapp.com/version-control/intro-to-version-control.html" target="_blank">http://guides.beanstalkapp.com/version-control/intro-to-version-control.html</a></font></p>
+                    </section>
+                    <section>
                         <h4>Concepts - <font color="orange">Tracking changes</font></h4>
                         <font size=6>
                             <p>
@@ -110,7 +130,9 @@
                             <p>
                                 As members of your team commit changes, it is important that you have the <font color="#2ec7bf">latest version</font> &rarr; Reduces chance of <em>conflict</em>
                             </p>
-                            <p class="fragment">You would need to do a <font color="orange"><code>git pull</code></font> to update.</p>
+                            <p class="fragment">You would do a <font color="orange"><code>git fetch</code></font> followed by a <font color="orange"><code>git merge</code></font>.</p>
+                            <p class="fragment"> OR </p>
+                            <p class="fragment">You would need to do a <font color="orange"><code>git pull</code></font> (= git fetch + git merge) to update.</p>
                         </font>
                     </section>
                     <section>
@@ -125,6 +147,27 @@
                         </font>
                     </section>
                     <section>
+                        <h4>Concepts - <font color="orange">Deleting files</font></h4>
+                        <font size=6>
+                            <p>
+                                If you have never added a file, you can just delete it normally.
+                            </p>
+                            <p class="fragment">If you did a <font color="orange"><code>git add</code></font> atleast once then <font color="orange"><code>git rm <i>filename</i></code></font>.</p>
+                            <p class="fragment">If your file is being tracked and you want git to stop tracking it (but not delete it!) then do a <font color="orange"><code>git rm --cached <i>filename</i></code></font>.</p>
+                            <p class="fragment">Don't forget to commit these changes!</p>
+                        </font>
+                    </section>
+                    <section>
+                        <h4>Concepts - <font color="orange">Dot files</font></h4>
+                        <font size=6>
+                            <p>
+                                .gitconfig &amp; .gitignore
+                            </p>
+                            <p class="fragment">.gitconfig contains setting that git will use. It is located in your home directory and applies to all your repos but you can override this by changing the config file for each repo stored in <font color="orange"><code>.git/config</code></font></p>
+                            <p class="fragment">.gitignore settings can also be set on an individual repo basis or on a global basis. It contains a list of files that git will ignore and not push to the remote repo.</p>
+                        </font>
+                    </section>
+                    <section>
                         <h4>Concepts - <font color="orange">Branching</font></h4>
                         <font size=6>
                             <p>
@@ -135,24 +178,32 @@
                         <p><font size=6><a href="https://guides.github.com/introduction/flow/" target="_blank">https://guides.github.com/introduction/flow/</a></font></p>
                     </section>
                     <section>
-                        <h4>Concepts - <font color="orange">Types of Version Control - Centralized</font></h4>
+                        <h4>Concepts - <font color="orange">Branching</font></h4>
                         <font size=6>
                             <p>
-                                It works in a <font color="orange">client-server</font> relationship. It's easy to understand and you have more <em>control</em> over users and access
+                                Your local working directory always represents one branch. 
+                            </p>
+                            <p>    
+                                To see the branches that exist: <font color="orange"><code>git branch</code></font>
+                            </p>
+                            <p>
+                                To create a branch: <font color="orange"><code>git branch <i>branchname</i> </code></font>
+                            </p>
+                            <p>
+                                To change your working directory to the new branch: <font color="orange"><code>git checkout <i>branchname</i> </code></font>
                             </p>
                         </font>
-                        <img src="./images/image_05_03_git_type_centralized.png" alt="git_branch" height="250">
-                        <p><font size=6><a href="http://guides.beanstalkapp.com/version-control/intro-to-version-control.html" target="_blank">http://guides.beanstalkapp.com/version-control/intro-to-version-control.html</a></font></p>
                     </section>
                     <section>
-                        <h4>Concepts - <font color="orange">Types of Version Control - Distributed</font></h4>
+                        <h4>Concepts - <font color="orange">Contributing to an existing repository</font></h4>
                         <font size=6>
                             <p>
-                                More powerful and detailed change tracking &rarr; less conflicts! No server is necessary. <font color="#2ec7bf">Git</font> is an example of this type of version control.
+                                If you want to implement changes in a big public source code repo then you want to fork it to make sure your changes don't break the code.
                             </p>
+                            <p class="fragment">The forked repository is your independent copy which you should then clone.</p>
+                            <p class="fragment">Once you're done making changes locally, you need to submit a pull request to merge your changes back to the source repository.</p>
+                            <p class="fragment">If after forking you left your repo for a while and changes have been committed to the source code you will want to make sure you have the updated version. You can find instructions on doing that here: <a href="https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository" target="_blank">how do I update a github forked repository</a></p>
                         </font>
-                        <img src="./images/image_05_04_git_type_distributed.png" alt="git_branch" height="250">
-                        <p><font size=6><a href="http://guides.beanstalkapp.com/version-control/intro-to-version-control.html" target="_blank">http://guides.beanstalkapp.com/version-control/intro-to-version-control.html</a></font></p>
                     </section>
                 </section>
 <!--Git commands-->
@@ -167,7 +218,7 @@
                             <li class="fragment"><code><font color="orange">git init</font></code> - Initialized repository </li>
                             <li class="fragment"><code><font color="orange">git add</font></code> - Adds files and directories to repo</li>
                             <li class="fragment"><code><font color="orange">git commit</font></code> - Commits your changes</li>
-                            <li class="fragment"><code><font color="orange">git push</font></code> - Push to your <em>remote</em> repository</li>
+                            <li class="fragment"><code><font color="orange">git push <i>remote_repo_name</i> <i>branch_name</i></font></code> - Push to your <em>remote</em> repository</li>
                         </ul>
                         <p class="fragment">
                             There are other commands like: <code><font color="orange">git clone</font></code>, <code><font color="orange">git merge</font></code>, <code><font color="orange">git status</font></code>, <code><font color="orange">git branch</font></code>, <code><font color="orange">git checkout </font></code>, <code><font color="orange">git pull</font></code> and many more!
