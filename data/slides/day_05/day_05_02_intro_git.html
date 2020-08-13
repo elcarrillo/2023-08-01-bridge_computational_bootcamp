@@ -106,6 +106,29 @@
                         </font>
                     </section>
                     <section>
+                        <h4>Concepts - <font color="orange">Creating a repository</font></h4>
+                        <font size=6>
+                            <p>
+                                You can either create one on Github and clone it or initialize a directory already on your computer.
+                            </p>
+                            <p class="fragment">You would do a <font color="orange"><code>git init</code></font> to initialize an existing directory. This will produce a <font color="orange"><code>.git/</code></font> folder</p>
+                            <p class="fragment"> OR </p>
+                            <p class="fragment">You would need to do a <font color="orange"><code>git clone <i>URL</i></code></font> to copy the remote repository locally. The remote repo is <em>locally</em> given the name <em>origin</em>.</p>
+                        </font>
+                    </section>
+                    <section>
+                        <h4>Concepts - <font color="orange">Adding &amp; Staging</font></h4>
+                        <font size=6>
+                            <p>
+                                Important vocab: <font color="orange">working directory</font> is different from the <font color="orange">local repository</font>.
+                            </p>
+                            <p class="fragment">The project folder is the working directory. That's where files are created and edited.</p>
+                            <p class="fragment">The <font color="orange"><code>.git/</code></font> folder in the working directory is the local repository.</p>
+                            <p class="fragment">When you <font color="orange"><code>git add</code></font> you move the file to the <em>staging area</em> which is the index file in <font color="orange"><code>.git/</code></font>. Think of it like a rough draft space.</p>
+                            <p class="fragment">Note: If you <font color="orange"><code>git add</code></font> and change the file <em>before</em> committing, you will need to <font color="orange"><code>git add</code></font> again.</p>
+                        </font>
+                    </section>
+                    <section>
                         <h4>Concepts - <font color="orange">Committing</font></h4>
                         <font size=6>
                             <p>
@@ -121,7 +144,7 @@
                                     <li>etc ...</li>
                                 </ul>
                             </ul>
-                            <p class="fragment">After each of these changes, you need to <font color="orange"><u>commit</u> your changes</font></p>
+                            <p class="fragment">When you are ready to move the file to the next version of the project, <font color="orange"><code>git commit</code></font> moves it to <font color="orange"><code>.git/objects/</code></font> which is the commit history.</p>
                         </font>
                     </section>
                     <section>
@@ -200,9 +223,27 @@
                             <p>
                                 If you want to implement changes in a big public source code repo then you want to fork it to make sure your changes don't break the code.
                             </p>
-                            <p class="fragment">The forked repository is your independent copy which you should then clone.</p>
+                            <p class="fragment">The forked repository is your <font color="orange">independent copy</font> which you should then clone.</p>
                             <p class="fragment">Once you're done making changes locally, you need to submit a pull request to merge your changes back to the source repository.</p>
                             <p class="fragment">If after forking you left your repo for a while and changes have been committed to the source code you will want to make sure you have the updated version. You can find instructions on doing that here: <a href="https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository" target="_blank">how do I update a github forked repository</a></p>
+                        </font>
+                    </section>
+                    <section>
+                        <h4>Concepts - <font color="orange">To branch or to fork?</font></h4>
+                        <font size=6>
+                            <p>
+                                Both are ways to diverge from the main source code.
+                            </p>
+                            <p class="fragment">A branch, like a branch of a tree, remains part of the original repository. The code that is branched (main trunk) and the branch know and rely on each other and the branch knows about the code it originated from.</p>
+                            <p class="fragment">A fork is <font color="orange">independent</font> from the original repository. If the original repository is deleted, the fork remains. If you fork a repository, you get that repository and all of its branches.</p>
+                        </font>
+                    </section>
+                    <section>
+                        <h4>Concepts - <font color="orange">You made a commit and want to undo it?</font></h4>
+                        <font size=10>
+                            <p>
+                                <font color="orange"><code>git reset --hard origin/master</code></font>
+                            </p>
                         </font>
                     </section>
                 </section>
