@@ -247,7 +247,7 @@
                     <section>
                         <h3>Functions</h3>
                         <ul>
-                            <li>You can call the docstring in iPythonwith the <font color="orange">?</font> symbol</li>
+                            <li>You can call the docstring in iPython with the <font color="orange">?</font> symbol</li>
                             <pre class="fragment"><code class="hljs" data-trim contenteditable>
                             In [3]: square?
                             Signature: square(x)
@@ -273,8 +273,8 @@
                         <ul>
                             <li class="fragment">The <font color="orange">docstring</font> of a function is <b><font color="yellow">very</font></b> important!</li>
                             <li class="fragment">You should <b><u><font color="orange">always</font></u></b> document your functions and code!</li>
-                            <li class="fragment">You'll be making yourself and others a <b>favor</b></li>
-                            <li class="fragment">And you might use it in the <font color="orange">future</font>!!</li>
+                            <li class="fragment">You'll be doing yourself and others a <b>favor</b></li>
+                            <li class="fragment">And you might use it in the <font color="orange">future</font>!</li>
                         </ul>
                         <p class="fragment">For more info on how to <b>properly</b> write <font color="orange">docstrings</font>, see:<br>
                         <a href="https://docs.python-guide.org/writing/documentation/#docstrings-and-magic" target="_blank">https://docs.python-guide.org/writing/documentation/#docstrings-and-magic</a></p>
@@ -287,13 +287,13 @@
                     </section>
                     <section>
                         <h3>Loops - <font color="orange"><code>for</code> loops</font></h3>
-                        <p>The main format of the <code>for</code> loop is:</p>
+                        <p class="fragment">The main format of the <code>for</code> loop is:</p>
                         
                         <pre class="fragment"><code class="hljs" data-trim contenteditable>
                         for &lt;variable&gt; in &lt;sequence&gt;:
                             do something
                         </code></pre>
-                        <p>Examples</p>
+                        <p class="fragment">Examples:</p>
                         <pre class="fragment"><code class="hljs" data-trim contenteditable>
                         In [1]: word = 'spam'
                         In [2]: for letter in word:
@@ -312,12 +312,14 @@
                         <h3>Loops with list comprehension</h3>
                         <p>Instead of</p>
                         <pre class="fragment"><code class="hljs" data-trim contenteditable>
-                        In [1]: for i in [1, 3, 5, 7, 9]:
-                           ...:     print(i * i)
+                        In [1]: result_list = []
+                           ...: for i in [1, 3, 5, 7, 9]:
+                           ...:     result = i * i
+                           ...:     result_list.append(result)
                         </code></pre>
                         <p class="fragment">You can write:</p>
                         <pre class="fragment"><code class="hljs" data-trim contenteditable>
-                        In [1]: [i*i for i in [1, 3, 5, 7, 9]]
+                        In [1]: result_list = [i*i for i in [1, 3, 5, 7, 9]]
                         </code></pre>
                     </section>
                     <section>
@@ -328,7 +330,7 @@
                         while &lt;condition&gt;:
                             &lt;body&gt;
                         </code></pre>
-                        <p class="fragment">Examples</p>
+                        <p class="fragment">Examples:</p>
                         <pre class="fragment"><code class="hljs" data-trim contenteditable>
                         In [2]: while(i &lt; 10):
                            ...:     print(i)
@@ -408,7 +410,7 @@
                         # Closes the file.
                         infile.close()
                         </code></pre>
-                        <p><font size=6>You can open files with the <font color="orange"><code>r</code></font> option.</font></p>
+                        <p class="fragment"><font size=6>You can open files with the <font color="orange"><code>r</code></font> option.</font></p>
                     </section>
                     <section>
                         <h3>Reading files</h3>
@@ -475,7 +477,7 @@
                             <ul>
                                 <li><font color="orange">width</font>
                                     <ul>
-                                        How manyplaces to use in display. If not enough, Python will expand to fit the value. Width of <font color="yellow">0</font> means "use as much space as needed.
+                                        How many places to use in display. If not enough, Python will expand to fit the value. Width of <font color="yellow">0</font> means "use as much space as needed.
                                     </ul>
                                 </li>
                                 <li><font color="orange">precision</font>
@@ -493,7 +495,7 @@
                         <pre class="fragment"><code class="hljs" data-trim contenteditable>
                         In [1]: a = 165.2
 
-                        In [2]: print( '%.2d' %(a))
+                        In [2]: print( '%d' %(a))
                         165
 
                         In [3]: b = 1024.65748
@@ -526,13 +528,6 @@
                         In [6]: 'And combine numbers (a = {0:.1f} and strings (c = {1})'.format(a, c)
                         Out[6]: 'And combine numbers (a = 123.5 and strings (c = some string)'
                         </code></pre>
-                        <font size=6>
-                            <ul class="fragment">
-                                <li><font color="yellow"><code>format</code></font> is really easy to use</li>
-                                <li>You don't have to convert into strings</li>
-                                <li>And you can use with along with arrays</li>
-                            </ul>
-                        </font>
                     </section>
                     <section>
                         <h3>A better way of formatting</h3>
@@ -548,7 +543,7 @@
                             <ul class="fragment">
                                 <li><font color="grey"><code>format</code> is really easy to use</font></li>
                                 <li><font color="grey">You don't have to convert into strings</font></li>
-                                <li><font color="orange">And you can use with along with arrays</font></li>
+                                <li><font color="orange">And you can use this with arrays as well</font></li>
                             </ul>
                         </font>
                     </section>
