@@ -1,4 +1,4 @@
-[![Main_Website](https://img.shields.io/badge/-Website-orange.svg)](https://vandyastroml.github.io/2020_08_02_Fall_Bridge_Computational_Bootcamp/)
+[![Main_Website](https://img.shields.io/badge/-Website-orange.svg)](https://criselsuarez.github.io/2021_08_03_Fall_Bridge_Computational_Bootcamp/)
 
 # 2021 - Fall Bridge Computational Bootcamp
 
